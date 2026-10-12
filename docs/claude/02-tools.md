@@ -162,6 +162,9 @@ LichtFeld 的 API 能力比早期文档里"待验证"的判断更有把握——
 - [ ] Python API 是否能在 **headless** 下运行
 - [ ] 删除和导出后**是否保持稳定 ID**
 - [ ] 是否能读取原始相机数据
+- [ ] 是否能对渲染图点击分割
+- [ ] 是否能输出与源资产身份对应的 Gaussian mask
+- [ ] mask 是否可作为训练或修复后端输入
 - [ ] 训练期 mask 是否适用于本项目的**数据格式**
 - [ ] GPLv3 对最终产品的影响（**商用前需法务确认**）
 
@@ -177,7 +180,7 @@ changelog 中有 "New mask mode combining Ignore and Segment"、"Support in-memo
 
 因为它是**训练器**，mask 可以参与训练本身。
 
-**这直接对应 [00-requirements.md](00-requirements.md) 第 2 层"被压制背景"** —— 可以在训练时就把干扰物区域 mask 掉，让它**一开始就不被优化**，而不是训练完再去删。
+**这直接对应 [00-requirements.md](00-requirements.md) 第 2 层"被压制背景"** —— 可排除干扰物像素，降低前景污染风险；这不会自动为隐藏背景提供监督。只有在其他视角可见且确认属于背景的原始像素才能用于背景恢复。
 
 **这是 SuperSplat 结构上做不到的事。**
 

@@ -32,13 +32,13 @@ $$\mathbf{C} = \sum_{i \in \mathcal{N}} \mathbf{c}_i \alpha_i T_i, \qquad T_i = 
 
 > **最需要判定归属的那批 Gaussian，正是最难判定的那批。**
 
-所有基于 2D mask lifting 的方法（Gaussian Grouping / FlashSplat / SAGA）都继承这个系统性弱点。它们通过"多视角投票"来缓解，但投票本身对被遮挡的 Gaussian 无效——它没有票可投。
+所有基于 2D mask lifting 的方法（Gaussian Grouping / FlashSplat / SAGA）都继承这个系统性弱点。各方法以标签累积、特征学习或多视角监督缓解歧义，但完全缺少背景证据的 Gaussian 仍难可靠归属。
 
-**缓解手段**：参考 Inpaint360GS 的 ${\mathcal{L}}_{space}$ 空间相似度损失，用 3D 近邻一致性把标签在空间上扩散（详见 [03-inpaint360gs.md](03-inpaint360gs.md) 第三节机制 2）。这类"3D 先验补 2D 监督盲区"的做法，是当前最有效的思路。
+**缓解手段**：在对象特征学习中参考 Inpaint360GS 的 ${\mathcal{L}}_{space}$ 空间正则，与 2D 监督一起优化；它不是已有 PLY 的免费标签扩张（详见 [03-inpaint360gs.md](03-inpaint360gs.md) 第三节机制 2）。这类"3D 先验补 2D 监督盲区"的做法，是当前最有效的思路。
 
 ### 第 2 层 · 被压制的背景本体 (Suppressed Background)
 
-**做什么**：修复干扰物**邻近**但并非被其遮挡的背景。
+**做什么**：修复已有但受干扰物遮挡、混色或训练不足影响的背景，包括删除后暴露和目标邻近区域。
 
 **为什么这是独立的一层**：干扰物旁边的背景 Gaussian **不是完好的**。同一个背景点在不同视角下的监督信号自相矛盾：
 
@@ -130,7 +130,7 @@ Inpaint360GS 的论文原话印证了这一点："most background areas remain v
 >
 > "不该在"是个**语用判断**，不是视觉属性。
 
-**因此设计目标必须从「检测」转向「候选生成 + 排序 + 确认」。** 这不是妥协，是这个问题唯一诚实的形态。架构上对应 [04-architecture.md](04-architecture.md) 中"MASK 是一等产物"的要求。
+**首版设计目标是「用户指定目标 → 三维归属 → 人工复核 → 删除与修复」。自动候选生成与排序是后续扩展。** 这不是妥协，是这个问题唯一诚实的形态。架构上对应 [04-architecture.md](04-architecture.md) 中"MASK 是一等产物"的要求。
 
 ### 约束 2：数据边界要同时支持两种输入
 

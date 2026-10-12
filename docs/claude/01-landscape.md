@@ -50,7 +50,9 @@
 
 ### 2.4 SAGA / Segment Any 3D Gaussians（AAAI 2025）
 
-**机制**：为每个 Gaussian 学习低维 3D 特征。训练阶段使用训练图像、SAM 特征和 mask，通过 SAM 引导损失与对应关系损失，让特征具备可分割的 3D 语义；推理阶段用 prompt 交互式分割预训练特征。
+**机制（AAAI 2025 / 官方 v2）**：学习 Scale-Gated Affinity Features，以 scale-aware contrastive training 建立不同尺度下的对象亲和关系；用 2D SAM mask 及其尺度监督 3D 特征，交互时通过 prompt、尺度门控和相似度阈值得到 Gaussian 集合。
+
+**版本边界**：官方 main README 仍描述早期的 SAM 特征引导与对应关系损失，且明确要求参考 v2。实验应固定分支与 commit，不能把早期 main 描述替代正式版机制。
 
 **定位**：需要预训练 3D 特征；毫秒级是特征训练完成后的交互推理速度，不包括数据准备、SAM 特征/mask 提取和 3D 特征训练。
 
@@ -80,7 +82,7 @@
 
 **本项目定位建议**：把它当**排序信号**，而非**决策信号**。这与 [00-requirements.md](00-requirements.md) 第四节"候选生成 + 排序 + 确认"的设计一致。
 
-> **补充说明（源码验证后）**：Inpaint360GS 的 GS-IoU **不是**开放集合识别方案——它依赖 HQSAM 产生 2D mask，且需要人工指定 `target_id`（见 [03-inpaint360gs.md](03-inpaint360gs.md) 价值 1 的更正）。因此**开放干扰物集合的候选生成在本项目中没有现成方案，需自研。** 上节的识别线（FlashSplat / SAGA / Gaussian Grouping）主要解决“给定提示或 2D mask 后如何得到 3D 归属”，不自动决定哪些对象应删除。这是本项目真正的开放问题。
+> **补充说明（源码验证后）**：Inpaint360GS 的 GS-IoU **不是**开放集合识别方案——它依赖 HQSAM 产生 2D mask，且需要人工指定 `target_id`（见 [03-inpaint360gs.md](03-inpaint360gs.md) 价值 1 的更正）。首版由用户指定对象，因此不需要先解决自动发现干扰物。 上节的识别线（FlashSplat / SAGA / Gaussian Grouping）主要解决“给定提示或 2D mask 后如何得到 3D 归属”，不自动决定哪些对象应删除。自动判断对象是否该删除属于后续研究，不阻塞用户提示驱动的编辑。
 
 ### 2.7 几何启发式（兜底路线）
 
@@ -294,3 +296,9 @@ Inpaint360GS 作者在论文中明确写出选型理由："To avoid hallucinatio
 
 ### 其他被提及的工作（未逐一核实）
 GOR-IS、OVR-GS、Ref2Inpaint、3DSceneEditor、SpotLessSplats、InFusion、GScream、Gaussian Grouping、MALD-NeRF、RefFusion、NeRFiller、GauGroup、Inpaint360GS 数据集
+
+### 本轮技术纠错来源
+
+- [SAGA 官方 v2 README](https://github.com/Jumpat/SegAnyGAussians/tree/v2)：数据准备、尺度提取、亲和特征训练和交互 GUI；与早期 main 区分。
+- [SAGA 论文](https://arxiv.org/abs/2312.00860)：尺度门控亲和特征与多粒度分割。
+- [FlashSplat 官方仓库](https://github.com/florinshen/FlashSplat)：ECCV 2024，固定 3DGS 的闭式标签分配；本轮未执行算法数值复现。
