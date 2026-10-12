@@ -58,7 +58,7 @@
 - 有一个 REST API，但**只负责上传和列出**场景（resumable multipart upload 到 superspl.at），**不能驱动编辑动作**。
 - **内部架构是干净的 Command Pattern**（`EditOp` / `EditHistory`，带 `do()` / `undo()` / `destroy()`）。
 
-> **待验证**：理论上可以 fork 后自己包一层脚本化的"选择 + 删除"，但这是自研工作量，不是现成能力。是否值得，取决于 [05-roadmap.md](05-roadmap.md) 的 Phase 0 验证结果。
+> **待验证**：理论上可以 fork 后自己包一层脚本化的"选择 + 删除"，但这是自研工作量，不是现成能力。是否值得，取决于 [05-roadmap.md](05-roadmap.md) 的 阶段 1 验证结果。
 
 ### 2.5 对本项目的价值
 
@@ -101,7 +101,7 @@
 
 **在未改造前，SuperSplat 的定位应限定为"人工复核前端"**，这仍是有价值的定位，只是不能承担"产生监督真值"的职责。
 
-> 相关细节待实测确认，已列入 [05-roadmap.md](05-roadmap.md) Phase 0.4 可选验证清单。
+> 相关细节待实测确认，已列入 [05-roadmap.md](05-roadmap.md) 阶段 1/3 可选验证清单。
 
 ---
 
@@ -157,7 +157,7 @@ LichtFeld 的 API 能力比早期文档里"待验证"的判断更有把握——
 >
 > 理由：不能把项目绑定在它的**版本节奏、GPLv3 许可证、CUDA 环境要求**上。
 
-**仍需实测的项**（已列入 [05-roadmap.md](05-roadmap.md) Phase 0）：
+**仍需实测的项**（列入 [05-roadmap.md](05-roadmap.md) 阶段 1/3）：
 
 - [ ] Python API 是否能在 **headless** 下运行
 - [ ] 删除和导出后**是否保持稳定 ID**
@@ -171,7 +171,7 @@ LichtFeld 的 API 能力比早期文档里"待验证"的判断更有把握——
 
 changelog 中有 "New mask mode combining Ignore and Segment"、"Support in-memory masks and float-dtype colors for direct-scene plugins"、"Fix masks not loading or applying"。
 
-**含义**：**mask 在这个工具里是一等数据，分割模型已经内置。** 这省掉了自行接入 SAM 的大半工作。
+**含义**：模型资产可减少部署准备，但是否提供可调用的图像点击分割、跨视角 Gaussian mask 和后端输入仍需实测；权重存在不等于能力链路已集成。
 
 #### (3) 训练期 mask 支持
 
@@ -187,7 +187,7 @@ changelog 中有 "New mask mode combining Ignore and Segment"、"Support in-memo
 |---|---|
 | 可编程的 3DGS 后端 | mask lifting 逻辑（要自己接） |
 | 训练期 mask 监督（改善被压制背景） | 空洞判定（要自己算） |
-| 内置 SAM2.1 做候选生成 | inpainting / 修复 |
+| SAM 2.1 权重/分割接口（待验证） | inpainting / 修复 |
 | CLI headless 批处理 | 阴影清理 |
 | Python 插件 / MCP 驱动编辑 | 碰撞 mesh 导出（有 USD，但需确认内容） |
 
@@ -264,7 +264,7 @@ LichtFeld 的预编译二进制**只发 Windows**（且有付费门槛：注册 
        ├─ 可选编辑与训练适配器 ──→ LichtFeld Studio
        │     · COLMAP 数据集训练（Tier A）
        │     · 训练期 mask 监督（改善第 2 层）
-       │     · 内置 SAM2.1 做候选生成
+       │     · 验证内置 SAM2.1 的点击分割与 mask 输出
        │     · Python 插件 / MCP 驱动选择与删除
        │     · CLI headless 批处理
        │

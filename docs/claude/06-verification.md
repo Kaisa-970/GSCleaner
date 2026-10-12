@@ -86,7 +86,7 @@ if gs_iou[selected_mask] < 0.1:            # ← 论文写 σ = 0.2
 
 **论文中没有任何关于 `IOU_heighlight` 模式的描述**——复现者按式 2 实现会得到与官方代码不同的行为，且难以定位原因。
 
-**行动项**：已列入 [05-roadmap.md](05-roadmap.md) Phase 2（官方默认基线建立后对比两种度量）。
+**行动项**：已列入 [05-roadmap.md](05-roadmap.md) 阶段 3（官方默认基线建立后对比两种度量）。
 
 ---
 
@@ -143,7 +143,7 @@ python bin/predict_color.py --data_name 360_${scene}_virtual
 
 **结论**：论文把递归条件补全写进方法描述，但**官方代码将其作为实验性选项且默认关闭**。
 
-**对文档的修正**：[03-inpaint360gs.md](03-inpaint360gs.md) 机制 4 已标注为"可选实验分支"，[05-roadmap.md](05-roadmap.md) Phase 3 列入开/关对照实验。
+**对文档的修正**：[03-inpaint360gs.md](03-inpaint360gs.md) 机制 4 已标注为"可选实验分支"，[05-roadmap.md](05-roadmap.md) 阶段 2B 列入开/关对照实验。
 
 ---
 
@@ -179,7 +179,7 @@ python edit_object_inpaint.py -s ...                             # 3DGS 微调
 | 身份约定 | 关闭重排与未压缩导出不保证过滤/删除后索引不变；需源资产哈希、版本及编辑映射 |
 | 导出过滤 | 按 deleted 状态 / selection / opacity 阈值 / NaN-Inf 有效性过滤 |
 
-> **信息强度说明**：本条来自文档与社区资料，**未在本机实测**。已列入 [05-roadmap.md](05-roadmap.md) Phase 0.4 可选验证清单。
+> **信息强度说明**：本条来自文档与社区资料，**未在本机实测**。已列入 [05-roadmap.md](05-roadmap.md) 阶段 1/3 可选验证清单。
 
 删除/过滤会使位置索引变化，即使顺序未改变。跨轮训练的 split/clone 需父 ID，新补全 Gaussian 需新 ID；完整协议见 [04-architecture.md](04-architecture.md) 第六节。
 
