@@ -1,0 +1,16 @@
+{
+  "ids": [
+    23,
+    28,
+    27
+  ],
+  "threshold": 0.7,
+  "original_count": 211981,
+  "removed_count": 7088,
+  "kept_count": 204893,
+  "reference_exact_all_properties": null,
+  "source_subset_exact_all_properties": true,
+  "checkpoint_sha256": "f3ff85a1ee44df748612213016f29cd9988decf451078b6d25aa07a553773c94",
+  "upstream_function_sha256": "4c71a56a634383892c5fc694c61c157fd6976b53d1e2239d4feb81bcde13fa8f",
+  "peak_cuda_bytes": 612579328
+}

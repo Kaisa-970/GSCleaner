@@ -1,0 +1,1696 @@
+{
+  "schema_version": 1,
+  "metric_definition": "Normalized RGB SSE / (3 * selected pixel count); PSNR=-10log10(MSE)",
+  "interpretation": "Run-to-run error measures change, not correctness; clean GT comparisons measure reference agreement.",
+  "configuration": {
+    "directories": {
+      "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt",
+      "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask",
+      "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0",
+      "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1",
+      "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2"
+    },
+    "gt_glob": "test_*",
+    "mask_threshold": 127,
+    "mask_polarity": "white",
+    "mask_resize": "nearest",
+    "script_sha256": "356a27ba98c1334a0272b045e77c7e4a96995a58700f48f74149555785e97c53"
+  },
+  "ignored_extra_stems": {
+    "gt": [],
+    "mask": [],
+    "run0": [],
+    "run1": [],
+    "run2": []
+  },
+  "mask_resizes": [
+    {
+      "stem": "test_IMG_1554",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1555",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1556",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1557",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1558",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1559",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1560",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1561",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1562",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    },
+    {
+      "stem": "test_IMG_1563",
+      "from_wh": [
+        2939,
+        1904
+      ],
+      "to_wh": [
+        368,
+        238
+      ]
+    }
+  ],
+  "aggregate": {
+    "run0_vs_gt": {
+      "repair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 15510,
+        "pixel_weighted_mse_rgb": 0.13184886204474416,
+        "pixel_weighted_psnr_db": 8.799236141437433,
+        "view_mean_mse_rgb": 0.1330450941962958,
+        "view_mean_psnr_db": 8.836027180250237
+      },
+      "nonrepair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 860330,
+        "pixel_weighted_mse_rgb": 0.005413030215171599,
+        "pixel_weighted_psnr_db": 22.665595486995038,
+        "view_mean_mse_rgb": 0.0054097224022102266,
+        "view_mean_psnr_db": 22.737000612081104
+      },
+      "full": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 875840,
+        "pixel_weighted_mse_rgb": 0.0076520461903230785,
+        "pixel_weighted_psnr_db": 21.162224170893463,
+        "view_mean_mse_rgb": 0.007652046190323078,
+        "view_mean_psnr_db": 21.186921165853267
+      }
+    },
+    "run1_vs_gt": {
+      "repair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 15510,
+        "pixel_weighted_mse_rgb": 0.03042063687419402,
+        "pixel_weighted_psnr_db": 15.16831697973592,
+        "view_mean_mse_rgb": 0.03122281780711337,
+        "view_mean_psnr_db": 15.107606477292597
+      },
+      "nonrepair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 860330,
+        "pixel_weighted_mse_rgb": 0.0016500997484045874,
+        "pixel_weighted_psnr_db": 27.824898019240855,
+        "view_mean_mse_rgb": 0.0016496775659394151,
+        "view_mean_psnr_db": 27.864445337415475
+      },
+      "full": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 875840,
+        "pixel_weighted_mse_rgb": 0.0021595889597000226,
+        "pixel_weighted_psnr_db": 26.65628901405284,
+        "view_mean_mse_rgb": 0.002159588959700022,
+        "view_mean_psnr_db": 26.68176827556571
+      }
+    },
+    "run2_vs_gt": {
+      "repair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 15510,
+        "pixel_weighted_mse_rgb": 0.004550568384772905,
+        "pixel_weighted_psnr_db": 23.41934354781621,
+        "view_mean_mse_rgb": 0.004609251832983654,
+        "view_mean_psnr_db": 23.4021025563057
+      },
+      "nonrepair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 860330,
+        "pixel_weighted_mse_rgb": 0.0017609262198786209,
+        "pixel_weighted_psnr_db": 27.542588399275793,
+        "view_mean_mse_rgb": 0.0017606365451284006,
+        "view_mean_psnr_db": 27.573453187026757
+      },
+      "full": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 875840,
+        "pixel_weighted_mse_rgb": 0.0018103271949168813,
+        "pixel_weighted_psnr_db": 27.422429245204313,
+        "view_mean_mse_rgb": 0.0018103271949168813,
+        "view_mean_psnr_db": 27.45080142716501
+      }
+    },
+    "run2_vs_run1": {
+      "repair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 15510,
+        "pixel_weighted_mse_rgb": 0.03063738301648434,
+        "pixel_weighted_psnr_db": 15.137483340146048,
+        "view_mean_mse_rgb": 0.031083244197823844,
+        "view_mean_psnr_db": 15.110724019188197
+      },
+      "nonrepair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 860330,
+        "pixel_weighted_mse_rgb": 0.0005591696073741327,
+        "pixel_weighted_psnr_db": 32.5245644189115,
+        "view_mean_mse_rgb": 0.0005593118106422774,
+        "view_mean_psnr_db": 32.603894341270646
+      },
+      "full": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 875840,
+        "pixel_weighted_mse_rgb": 0.0010918160838713233,
+        "pixel_weighted_psnr_db": 29.618505122602162,
+        "view_mean_mse_rgb": 0.0010918160838713233,
+        "view_mean_psnr_db": 29.685269271081268
+      }
+    },
+    "run1_vs_run0": {
+      "repair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 15510,
+        "pixel_weighted_mse_rgb": 0.20725355297806156,
+        "pixel_weighted_psnr_db": 6.834980155398595,
+        "view_mean_mse_rgb": 0.20788559999890013,
+        "view_mean_psnr_db": 6.95041241172031
+      },
+      "nonrepair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 860330,
+        "pixel_weighted_mse_rgb": 0.004319122970226551,
+        "pixel_weighted_psnr_db": 23.64604430930374,
+        "view_mean_mse_rgb": 0.004316615794127891,
+        "view_mean_psnr_db": 23.73233835003158
+      },
+      "full": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 875840,
+        "pixel_weighted_mse_rgb": 0.007912830735824746,
+        "pixel_weighted_psnr_db": 21.01668124211013,
+        "view_mean_mse_rgb": 0.007912830735824746,
+        "view_mean_psnr_db": 21.06736833984591
+      }
+    },
+    "run2_vs_run0": {
+      "repair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 15510,
+        "pixel_weighted_mse_rgb": 0.12764874492799105,
+        "pixel_weighted_psnr_db": 8.939834509226177,
+        "view_mean_mse_rgb": 0.12906746917877907,
+        "view_mean_psnr_db": 8.961892721643766
+      },
+      "nonrepair": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 860330,
+        "pixel_weighted_mse_rgb": 0.004072970893824098,
+        "pixel_weighted_psnr_db": 23.90088693448682,
+        "view_mean_mse_rgb": 0.0040706943362564885,
+        "view_mean_psnr_db": 23.981802960452818
+      },
+      "full": {
+        "views": 10,
+        "nonempty_views": 10,
+        "pixels": 875840,
+        "pixel_weighted_mse_rgb": 0.0062613389236810665,
+        "pixel_weighted_psnr_db": 22.033327873982948,
+        "view_mean_mse_rgb": 0.006261338923681069,
+        "view_mean_psnr_db": 22.053189883075184
+      }
+    }
+  },
+  "views": [
+    {
+      "stem": "test_IMG_1554",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.017982736572890026,
+      "mask_sha256": "753e9edf2533ca8f7ac61a7c0e5405fb06279c7791a9b314e116550ffabfe582",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1554.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1554.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1554.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1554.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1554.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1575,
+            "sse_rgb": 850.1958785082661,
+            "mse_rgb": 0.1799356356631251,
+            "psnr_db": 7.4488281753699095
+          },
+          "nonrepair": {
+            "pixels": 86009,
+            "sse_rgb": 1221.434079200308,
+            "mse_rgb": 0.004733745225113294,
+            "psnr_db": 23.247951199398777
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2071.629957708574,
+            "mse_rgb": 0.0078843546679324,
+            "psnr_db": 21.032338477536463
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1575,
+            "sse_rgb": 163.82928104575163,
+            "mse_rgb": 0.03467286371338659,
+            "psnr_db": 14.600102874592569
+          },
+          "nonrepair": {
+            "pixels": 86009,
+            "sse_rgb": 573.32184544406,
+            "mse_rgb": 0.0022219451663742945,
+            "psnr_db": 26.53266662872607
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 737.1511264898116,
+            "mse_rgb": 0.0028055014861535273,
+            "psnr_db": 25.519894969023863
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1575,
+            "sse_rgb": 27.08910419069589,
+            "mse_rgb": 0.005733143744062622,
+            "psnr_db": 22.416071692543508
+          },
+          "nonrepair": {
+            "pixels": 86009,
+            "sse_rgb": 607.9459438677433,
+            "mse_rgb": 0.0023561330553304237,
+            "psnr_db": 26.278001877541467
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 635.035048058439,
+            "mse_rgb": 0.002416860948949728,
+            "psnr_db": 26.167483354595436
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1575,
+            "sse_rgb": 148.20324490580546,
+            "mse_rgb": 0.03136576611763078,
+            "psnr_db": 15.035441002326216
+          },
+          "nonrepair": {
+            "pixels": 86009,
+            "sse_rgb": 140.9649519415609,
+            "mse_rgb": 0.0005463186098414542,
+            "psnr_db": 32.62554005390972
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 289.16819684736635,
+            "mse_rgb": 0.0011005366156960417,
+            "psnr_db": 29.58395503560244
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1575,
+            "sse_rgb": 1484.8473356401385,
+            "mse_rgb": 0.31425340436828325,
+            "psnr_db": 5.027200088198843
+          },
+          "nonrepair": {
+            "pixels": 86009,
+            "sse_rgb": 941.4695886197617,
+            "mse_rgb": 0.003648725089311435,
+            "psnr_db": 24.378588570225013
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2426.3169242599006,
+            "mse_rgb": 0.009234247215092181,
+            "psnr_db": 20.345985028936916
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1575,
+            "sse_rgb": 845.5778854286814,
+            "mse_rgb": 0.17895828263040875,
+            "psnr_db": 7.472481965897661
+          },
+          "nonrepair": {
+            "pixels": 86009,
+            "sse_rgb": 793.8804767397155,
+            "mse_rgb": 0.003076734127590196,
+            "psnr_db": 25.11910031184876
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1639.458362168397,
+            "mse_rgb": 0.006239565682348363,
+            "psnr_db": 22.048456392156606
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1555",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.021567866276945562,
+      "mask_sha256": "0ef9821c1aca543e494794dd6f2cc15a3f9097dcccd3b2a2f695636009f2f9f5",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1555.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1555.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1555.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1555.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1555.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1889,
+            "sse_rgb": 790.685105728566,
+            "mse_rgb": 0.13952445839572367,
+            "psnr_db": 8.55349654646852
+          },
+          "nonrepair": {
+            "pixels": 85695,
+            "sse_rgb": 1055.2914725105725,
+            "mse_rgb": 0.004104834869831272,
+            "psnr_db": 23.86704309083771
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1845.9765782391387,
+            "mse_rgb": 0.0070255472013120305,
+            "psnr_db": 21.533198440555893
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1889,
+            "sse_rgb": 163.86239138792772,
+            "mse_rgb": 0.028915191704239937,
+            "psnr_db": 15.388739240307107
+          },
+          "nonrepair": {
+            "pixels": 85695,
+            "sse_rgb": 350.47069588619775,
+            "mse_rgb": 0.0013632483259863382,
+            "psnr_db": 28.65425026936826
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 514.3330872741253,
+            "mse_rgb": 0.001957484956438487,
+            "psnr_db": 27.083015668745443
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1889,
+            "sse_rgb": 26.850119184928875,
+            "mse_rgb": 0.004737977622186144,
+            "psnr_db": 23.244069948129216
+          },
+          "nonrepair": {
+            "pixels": 85695,
+            "sse_rgb": 381.4546559015764,
+            "mse_rgb": 0.0014837686208902753,
+            "psnr_db": 28.286338177262152
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 408.3047750865053,
+            "mse_rgb": 0.001553954965467457,
+            "psnr_db": 28.085615714632773
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1889,
+            "sse_rgb": 168.96487504805845,
+            "mse_rgb": 0.029815577033361292,
+            "psnr_db": 15.25556781153739
+          },
+          "nonrepair": {
+            "pixels": 85695,
+            "sse_rgb": 144.44561322568242,
+            "mse_rgb": 0.0005618593586778008,
+            "psnr_db": 32.503723808616904
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 313.41048827374095,
+            "mse_rgb": 0.0011927996295888936,
+            "psnr_db": 29.23432504420525
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1889,
+            "sse_rgb": 1307.9465590157633,
+            "mse_rgb": 0.23080052214853775,
+            "psnr_db": 6.36763212994763
+          },
+          "nonrepair": {
+            "pixels": 85695,
+            "sse_rgb": 876.4396924259898,
+            "mse_rgb": 0.003409143638975397,
+            "psnr_db": 24.673547000617493
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2184.3862514417533,
+            "mse_rgb": 0.00831349048319995,
+            "psnr_db": 20.802165960332523
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1889,
+            "sse_rgb": 750.0632679738562,
+            "mse_rgb": 0.1323563204471248,
+            "psnr_db": 8.782553148857263
+          },
+          "nonrepair": {
+            "pixels": 85695,
+            "sse_rgb": 788.4259746251441,
+            "mse_rgb": 0.0030667910404152095,
+            "psnr_db": 25.13315814198873
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1538.4892425990006,
+            "mse_rgb": 0.005855290321668344,
+            "psnr_db": 22.324515665228457
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1556",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.026134910485933503,
+      "mask_sha256": "00685e77a763477b088a8e285d1b2885242cbac95c19176f0662f42a7cd9ad26",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1556.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1556.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1556.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1556.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1556.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 2289,
+            "sse_rgb": 886.634586697424,
+            "mse_rgb": 0.12911527402030348,
+            "psnr_db": 8.890223787222707
+          },
+          "nonrepair": {
+            "pixels": 85295,
+            "sse_rgb": 1170.3649673202613,
+            "mse_rgb": 0.004573792787073339,
+            "psnr_db": 23.397235147334463
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2056.9995540176856,
+            "mse_rgb": 0.007828673250889377,
+            "psnr_db": 21.063118329152395
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 2289,
+            "sse_rgb": 166.94603613994616,
+            "mse_rgb": 0.024311349372352725,
+            "psnr_db": 16.141909354921964
+          },
+          "nonrepair": {
+            "pixels": 85295,
+            "sse_rgb": 371.0441214917339,
+            "mse_rgb": 0.001450042485850026,
+            "psnr_db": 28.386192728685337
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 537.9901576316801,
+            "mse_rgb": 0.002047520694920229,
+            "psnr_db": 26.887716999977084
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 2289,
+            "sse_rgb": 28.375578623606305,
+            "mse_rgb": 0.004132165228426723,
+            "psnr_db": 23.838223211409677
+          },
+          "nonrepair": {
+            "pixels": 85295,
+            "sse_rgb": 424.4041676278354,
+            "mse_rgb": 0.0016585738422644368,
+            "psnr_db": 27.80265188254189
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 452.7797462514416,
+            "mse_rgb": 0.001723220931720564,
+            "psnr_db": 27.636590387005
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 2289,
+            "sse_rgb": 195.69162629757787,
+            "mse_rgb": 0.0284973971599793,
+            "psnr_db": 15.45194804927623
+          },
+          "nonrepair": {
+            "pixels": 85295,
+            "sse_rgb": 173.70499038831218,
+            "mse_rgb": 0.0006788400663904183,
+            "psnr_db": 31.682325327380532
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 369.39661668589,
+            "mse_rgb": 0.0014058755658791942,
+            "psnr_db": 28.520531170427553
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 2289,
+            "sse_rgb": 1365.7807304882738,
+            "mse_rgb": 0.19889045150550078,
+            "psnr_db": 7.013860663376699
+          },
+          "nonrepair": {
+            "pixels": 85295,
+            "sse_rgb": 964.8305113417915,
+            "mse_rgb": 0.0037705629925231707,
+            "psnr_db": 24.235937993190205
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2330.611241830065,
+            "mse_rgb": 0.008870003812835163,
+            "psnr_db": 20.52076193483616
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 2289,
+            "sse_rgb": 821.201783929258,
+            "mse_rgb": 0.11958668762622077,
+            "psnr_db": 9.223171632594706
+          },
+          "nonrepair": {
+            "pixels": 85295,
+            "sse_rgb": 894.2257131872356,
+            "mse_rgb": 0.0034946390495231667,
+            "psnr_db": 24.565976745379324
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1715.427497116494,
+            "mse_rgb": 0.006528694347203804,
+            "psnr_db": 21.85173663212052
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1557",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.022207252466203874,
+      "mask_sha256": "ab2f0785bd076e5285e2158f6d8687df151282a50ceacc472a0ffd7a1d4b6f8b",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1557.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1557.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1557.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1557.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1557.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1945,
+            "sse_rgb": 529.1271818531334,
+            "mse_rgb": 0.09068160785829192,
+            "psnr_db": 10.42480788084633
+          },
+          "nonrepair": {
+            "pixels": 85639,
+            "sse_rgb": 1122.3356555171085,
+            "mse_rgb": 0.004368475638113121,
+            "psnr_db": 23.59670081896261
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1651.4628373702421,
+            "mse_rgb": 0.006285253156475468,
+            "psnr_db": 22.01677225178316
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1945,
+            "sse_rgb": 139.59121876201462,
+            "mse_rgb": 0.023923088048331556,
+            "psnr_db": 16.21182761314525
+          },
+          "nonrepair": {
+            "pixels": 85639,
+            "sse_rgb": 384.26934256055364,
+            "mse_rgb": 0.001495694494955778,
+            "psnr_db": 28.251571048032783
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 523.8605613225683,
+            "mse_rgb": 0.001993745285754507,
+            "psnr_db": 27.00330326494405
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1945,
+            "sse_rgb": 21.586635909265667,
+            "mse_rgb": 0.0036995091532588975,
+            "psnr_db": 24.318558938173858
+          },
+          "nonrepair": {
+            "pixels": 85639,
+            "sse_rgb": 410.0342176086121,
+            "mse_rgb": 0.001595979314753839,
+            "psnr_db": 27.969727417738113
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 431.6208535178778,
+            "mse_rgb": 0.0016426929329477142,
+            "psnr_db": 27.844436112391953
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1945,
+            "sse_rgb": 147.25182622068434,
+            "mse_rgb": 0.02523595993499303,
+            "psnr_db": 15.97980170758258
+          },
+          "nonrepair": {
+            "pixels": 85639,
+            "sse_rgb": 128.0042906574394,
+            "mse_rgb": 0.0004982320775092323,
+            "psnr_db": 33.025683148629746
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 275.2561168781238,
+            "mse_rgb": 0.0010475890454806197,
+            "psnr_db": 29.79809051591014
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1945,
+            "sse_rgb": 798.8971011149557,
+            "mse_rgb": 0.13691467028533946,
+            "psnr_db": 8.635500151047012
+          },
+          "nonrepair": {
+            "pixels": 85639,
+            "sse_rgb": 855.3634755863131,
+            "mse_rgb": 0.0033293377845230684,
+            "psnr_db": 24.776421404058368
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1654.2605767012687,
+            "mse_rgb": 0.006295900989150487,
+            "psnr_db": 22.009421104145098
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1945,
+            "sse_rgb": 518.003044982699,
+            "mse_rgb": 0.08877515766627231,
+            "psnr_db": 10.517085477108726
+          },
+          "nonrepair": {
+            "pixels": 85639,
+            "sse_rgb": 891.1196462898885,
+            "mse_rgb": 0.003468511800658923,
+            "psnr_db": 24.59856823594221
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1409.1226912725865,
+            "mse_rgb": 0.0053629380224416425,
+            "psnr_db": 22.705972219940694
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1558",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.0192044208987943,
+      "mask_sha256": "77dbb3427dc8f4726eab2a31776e1a90b5b7561605312efc167ce9b4f5d04341",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1558.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1558.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1558.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1558.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1558.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1682,
+            "sse_rgb": 555.7018223760092,
+            "mse_rgb": 0.1101271942877545,
+            "psnr_db": 9.581054251626927
+          },
+          "nonrepair": {
+            "pixels": 85902,
+            "sse_rgb": 1264.864605920799,
+            "mse_rgb": 0.004908169021756572,
+            "psnr_db": 23.090804899645395
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1820.566428296809,
+            "mse_rgb": 0.00692883946952567,
+            "psnr_db": 21.59339500480243
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1682,
+            "sse_rgb": 151.54402153018071,
+            "mse_rgb": 0.03003250525766562,
+            "psnr_db": 15.224084382239846
+          },
+          "nonrepair": {
+            "pixels": 85902,
+            "sse_rgb": 390.52147635524796,
+            "mse_rgb": 0.0015153759569247434,
+            "psnr_db": 28.194796075826616
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 542.0654978854287,
+            "mse_rgb": 0.002063030910841511,
+            "psnr_db": 26.85494264849278
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1682,
+            "sse_rgb": 19.39112648981161,
+            "mse_rgb": 0.003842870885812844,
+            "psnr_db": 24.153442068760093
+          },
+          "nonrepair": {
+            "pixels": 85902,
+            "sse_rgb": 425.7646289888504,
+            "mse_rgb": 0.00165213316332895,
+            "psnr_db": 27.81954951102662
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 445.15575547866206,
+            "mse_rgb": 0.001694205012630397,
+            "psnr_db": 27.710340376494372
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1682,
+            "sse_rgb": 155.2717262591311,
+            "mse_rgb": 0.030771249754088605,
+            "psnr_db": 15.118548648093398
+          },
+          "nonrepair": {
+            "pixels": 85902,
+            "sse_rgb": 137.75157247212607,
+            "mse_rgb": 0.00053452993904731,
+            "psnr_db": 32.720279649193714
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 293.0232987312572,
+            "mse_rgb": 0.001115208632974277,
+            "psnr_db": 29.526438773032943
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1682,
+            "sse_rgb": 878.1326412918107,
+            "mse_rgb": 0.17402549371617335,
+            "psnr_db": 7.593871254573878
+          },
+          "nonrepair": {
+            "pixels": 85902,
+            "sse_rgb": 958.871295655517,
+            "mse_rgb": 0.003720795385654649,
+            "psnr_db": 24.29364212086619
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1837.003936947328,
+            "mse_rgb": 0.006991398493436122,
+            "psnr_db": 21.55435943391207
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1682,
+            "sse_rgb": 570.3440061514802,
+            "mse_rgb": 0.1130289350280381,
+            "psnr_db": 9.468103643537031
+          },
+          "nonrepair": {
+            "pixels": 85902,
+            "sse_rgb": 1044.8712033833137,
+            "mse_rgb": 0.004054508639237401,
+            "psnr_db": 23.92061769861666
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1615.2152095347944,
+            "mse_rgb": 0.006147299390812608,
+            "psnr_db": 22.113156349983008
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1559",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.01201132626963829,
+      "mask_sha256": "b8261b4df9142ba3c60a76e4f011a0412893993ea2d7a22edaf6fd7f7454a661",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1559.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1559.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1559.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1559.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1559.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1052,
+            "sse_rgb": 343.66860438292963,
+            "mse_rgb": 0.10889372762450242,
+            "psnr_db": 9.629971352719533
+          },
+          "nonrepair": {
+            "pixels": 86532,
+            "sse_rgb": 1429.9791157247214,
+            "mse_rgb": 0.005508479004779432,
+            "psnr_db": 22.58968301514718
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1773.6477201076507,
+            "mse_rgb": 0.006750272957418595,
+            "psnr_db": 21.706786654646923
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1052,
+            "sse_rgb": 97.8549788542868,
+            "mse_rgb": 0.031006013578671356,
+            "psnr_db": 15.085540671091932
+          },
+          "nonrepair": {
+            "pixels": 86532,
+            "sse_rgb": 437.26769703960014,
+            "mse_rgb": 0.0016844161583368007,
+            "psnr_db": 27.735506011137705
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 535.1226758938869,
+            "mse_rgb": 0.0020366074316994233,
+            "psnr_db": 26.91092675799622
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1052,
+            "sse_rgb": 13.696916570549789,
+            "mse_rgb": 0.004339960890541758,
+            "psnr_db": 23.6251418410464
+          },
+          "nonrepair": {
+            "pixels": 86532,
+            "sse_rgb": 458.34211457131875,
+            "mse_rgb": 0.0017655977540922,
+            "psnr_db": 27.531082322852235
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 472.0390311418686,
+            "mse_rgb": 0.001796519269660625,
+            "psnr_db": 27.45568120144611
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1052,
+            "sse_rgb": 95.88278354479047,
+            "mse_rgb": 0.03038111012192347,
+            "psnr_db": 15.173963611178277
+          },
+          "nonrepair": {
+            "pixels": 86532,
+            "sse_rgb": 83.99218762014608,
+            "mse_rgb": 0.00032354962179750873,
+            "psnr_db": 34.90059103495462
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 179.8749711649365,
+            "mse_rgb": 0.0006845807878339137,
+            "psnr_db": 31.645752931251
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1052,
+            "sse_rgb": 481.3735486351403,
+            "mse_rgb": 0.15252647295156538,
+            "psnr_db": 8.166547723237855
+          },
+          "nonrepair": {
+            "pixels": 86532,
+            "sse_rgb": 1015.0312956555172,
+            "mse_rgb": 0.003910042125670339,
+            "psnr_db": 24.078185636149712
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1496.4048442906574,
+            "mse_rgb": 0.005695122565349293,
+            "psnr_db": 22.444969249857433
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1052,
+            "sse_rgb": 343.9683660130719,
+            "mse_rgb": 0.1089887091296172,
+            "psnr_db": 9.626184912033288
+          },
+          "nonrepair": {
+            "pixels": 86532,
+            "sse_rgb": 1046.5582468281432,
+            "mse_rgb": 0.004031488338911783,
+            "psnr_db": 23.945345920604836
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1390.526612841215,
+            "mse_rgb": 0.005292163762183408,
+            "psnr_db": 22.763667253476896
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1560",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.014157837047862623,
+      "mask_sha256": "73731b4187082cee173e225f02a6b5a6da5f6a7887078ec5a3e3217974074c4c",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1560.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1560.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1560.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1560.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1560.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1240,
+            "sse_rgb": 479.4603460207612,
+            "mse_rgb": 0.1288871897905272,
+            "psnr_db": 8.897902454065088
+          },
+          "nonrepair": {
+            "pixels": 86344,
+            "sse_rgb": 1754.4683275663208,
+            "mse_rgb": 0.0067731721469406125,
+            "psnr_db": 21.692078862249847
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2233.9286735870824,
+            "mse_rgb": 0.008502042509998335,
+            "psnr_db": 20.704767279020004
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1240,
+            "sse_rgb": 115.51298731257208,
+            "mse_rgb": 0.031051878309831204,
+            "psnr_db": 15.07912124475398
+          },
+          "nonrepair": {
+            "pixels": 86344,
+            "sse_rgb": 420.8963936947327,
+            "mse_rgb": 0.001624881843535674,
+            "psnr_db": 27.89178214110422
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 536.409381007305,
+            "mse_rgb": 0.002041504464313516,
+            "psnr_db": 26.90049666035079
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1240,
+            "sse_rgb": 19.48484429065744,
+            "mse_rgb": 0.005237861368456301,
+            "psnr_db": 22.808460003191854
+          },
+          "nonrepair": {
+            "pixels": 86344,
+            "sse_rgb": 451.53291810841984,
+            "mse_rgb": 0.0017431549696887638,
+            "psnr_db": 27.58664001593996
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 471.0177623990773,
+            "mse_rgb": 0.0017926324534126375,
+            "psnr_db": 27.465087454727055
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1240,
+            "sse_rgb": 107.13454825067281,
+            "mse_rgb": 0.028799609744804517,
+            "psnr_db": 15.40613397200014
+          },
+          "nonrepair": {
+            "pixels": 86344,
+            "sse_rgb": 137.3710726643599,
+            "mse_rgb": 0.000530324719202106,
+            "psnr_db": 32.75458129315774
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 244.50562091503267,
+            "mse_rgb": 0.0009305566500541676,
+            "psnr_db": 30.31257182923295
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1240,
+            "sse_rgb": 668.9195078815841,
+            "mse_rgb": 0.17981707201117852,
+            "psnr_db": 7.451690782964545
+          },
+          "nonrepair": {
+            "pixels": 86344,
+            "sse_rgb": 1374.7822991157245,
+            "mse_rgb": 0.005307384026358614,
+            "psnr_db": 22.75119486990091
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2043.7018069973087,
+            "mse_rgb": 0.007778063752121044,
+            "psnr_db": 21.091285015227182
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1240,
+            "sse_rgb": 471.9330257593233,
+            "mse_rgb": 0.12686371660196863,
+            "psnr_db": 8.966625696523906
+          },
+          "nonrepair": {
+            "pixels": 86344,
+            "sse_rgb": 1372.8559630911188,
+            "mse_rgb": 0.00529994735434664,
+            "psnr_db": 22.757284443294573
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1844.7889888504421,
+            "mse_rgb": 0.007021027390278446,
+            "psnr_db": 21.53599332701889
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1561",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.013803891121666058,
+      "mask_sha256": "026c830864fa895513c1389d04d98034e54999cc31a151f82967c4ba71eb0b3c",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1561.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1561.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1561.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1561.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1561.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1209,
+            "sse_rgb": 536.7121107266436,
+            "mse_rgb": 0.14797687089237485,
+            "psnr_db": 8.298061604752288
+          },
+          "nonrepair": {
+            "pixels": 86375,
+            "sse_rgb": 1773.6186389850052,
+            "mse_rgb": 0.006844645012966735,
+            "psnr_db": 21.646490709642485
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2310.330749711649,
+            "mse_rgb": 0.008792818892764466,
+            "psnr_db": 20.558718719895243
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1209,
+            "sse_rgb": 117.0877508650519,
+            "mse_rgb": 0.03228225830301955,
+            "psnr_db": 14.910360918485342
+          },
+          "nonrepair": {
+            "pixels": 86375,
+            "sse_rgb": 418.00682814302183,
+            "mse_rgb": 0.0016131474313285936,
+            "psnr_db": 27.923259390670356
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 535.0945790080738,
+            "mse_rgb": 0.0020365004985997207,
+            "psnr_db": 26.91115479248948
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1209,
+            "sse_rgb": 15.875524798154554,
+            "mse_rgb": 0.004377040198002359,
+            "psnr_db": 23.58819464880959
+          },
+          "nonrepair": {
+            "pixels": 86375,
+            "sse_rgb": 461.34697424067656,
+            "mse_rgb": 0.0017804031808612698,
+            "psnr_db": 27.49481638480021
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 477.2224990388312,
+            "mse_rgb": 0.0018162468755283734,
+            "psnr_db": 27.408251198058025
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1209,
+            "sse_rgb": 112.71078815840062,
+            "mse_rgb": 0.031075486120319993,
+            "psnr_db": 15.075820688738892
+          },
+          "nonrepair": {
+            "pixels": 86375,
+            "sse_rgb": 169.64061514801995,
+            "mse_rgb": 0.0006546671110391508,
+            "psnr_db": 31.839794764798533
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 282.3514033064205,
+            "mse_rgb": 0.0010745927844751724,
+            "psnr_db": 29.687560798971756
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1209,
+            "sse_rgb": 733.5405151864668,
+            "mse_rgb": 0.2022444210605092,
+            "psnr_db": 6.941234496220114
+          },
+          "nonrepair": {
+            "pixels": 86375,
+            "sse_rgb": 1424.6980084582854,
+            "mse_rgb": 0.005498110982955274,
+            "psnr_db": 22.597864978867683
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2158.2385236447517,
+            "mse_rgb": 0.008213975625855376,
+            "psnr_db": 20.854465902055487
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1209,
+            "sse_rgb": 514.7761168781237,
+            "mse_rgb": 0.14192889905655465,
+            "psnr_db": 8.47929166043987
+          },
+          "nonrepair": {
+            "pixels": 86375,
+            "sse_rgb": 1334.250042291426,
+            "mse_rgb": 0.0051490594975067095,
+            "psnr_db": 22.882720898605562
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1849.02615916955,
+            "mse_rgb": 0.00703715351041876,
+            "psnr_db": 21.52602975048971
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1562",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.015345268542199489,
+      "mask_sha256": "6427536ce8b56950e9c28268ec42b0f64f910eeb977ab187b879fb233e9f2410",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1562.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1562.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1562.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1562.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1562.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1344,
+            "sse_rgb": 554.1331026528259,
+            "mse_rgb": 0.13743380522143497,
+            "psnr_db": 8.619064287367848
+          },
+          "nonrepair": {
+            "pixels": 86240,
+            "sse_rgb": 1651.33908496732,
+            "mse_rgb": 0.006382726828104979,
+            "psnr_db": 21.949937423766073
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2205.472187620146,
+            "mse_rgb": 0.008393740818795466,
+            "psnr_db": 20.76044445025023
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1344,
+            "sse_rgb": 139.78142252979626,
+            "mse_rgb": 0.03466801154012804,
+            "psnr_db": 14.600710675422068
+          },
+          "nonrepair": {
+            "pixels": 86240,
+            "sse_rgb": 441.7647212610535,
+            "mse_rgb": 0.0017075012417325816,
+            "psnr_db": 27.676389718177845
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 581.5461437908496,
+            "mse_rgb": 0.002213289123549391,
+            "psnr_db": 26.549618501665403
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1344,
+            "sse_rgb": 19.79503267973856,
+            "mse_rgb": 0.004909482311443096,
+            "psnr_db": 23.0896430036928
+          },
+          "nonrepair": {
+            "pixels": 86240,
+            "sse_rgb": 461.69697808535193,
+            "mse_rgb": 0.0017845430507318798,
+            "psnr_db": 27.484729705607872
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 481.4920107650902,
+            "mse_rgb": 0.0018324960828655546,
+            "psnr_db": 27.36956945031551
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1344,
+            "sse_rgb": 130.84547481737792,
+            "mse_rgb": 0.03245175466700841,
+            "psnr_db": 14.887618159176291
+          },
+          "nonrepair": {
+            "pixels": 86240,
+            "sse_rgb": 169.81282583621686,
+            "mse_rgb": 0.0006563575519334294,
+            "psnr_db": 31.82859513476928
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 300.65830065359467,
+            "mse_rgb": 0.0011442664590701295,
+            "psnr_db": 29.414728319861553
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1344,
+            "sse_rgb": 854.1580007689349,
+            "mse_rgb": 0.21184474225420014,
+            "psnr_db": 6.7398231022482165
+          },
+          "nonrepair": {
+            "pixels": 86240,
+            "sse_rgb": 1383.5413610149942,
+            "mse_rgb": 0.005347639768920046,
+            "psnr_db": 22.71837855643306
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2237.6993617839294,
+            "mse_rgb": 0.008516393259742759,
+            "psnr_db": 20.697442924435677
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1344,
+            "sse_rgb": 535.4115032679739,
+            "mse_rgb": 0.1327905514057475,
+            "psnr_db": 8.768328257084502
+          },
+          "nonrepair": {
+            "pixels": 86240,
+            "sse_rgb": 1256.5420376778166,
+            "mse_rgb": 0.004856764214895704,
+            "psnr_db": 23.13652980046692
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1791.9535409457899,
+            "mse_rgb": 0.006819942534959923,
+            "psnr_db": 21.66219284706417
+          }
+        }
+      }
+    },
+    {
+      "stem": "test_IMG_1563",
+      "size_wh": [
+        368,
+        238
+      ],
+      "repair_fraction": 0.014671629521373767,
+      "mask_sha256": "12c803b51d194af873192e010f0c08bba3bccadb8a502202b514b500b60963f9",
+      "files": {
+        "gt": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/gt/test_IMG_1563.png",
+        "mask": "/mnt/data/ypk/Projects/Inpaint360GS/data/inpaint360/toys/unseen_mask/test_IMG_1563.png",
+        "run0": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run0/test_IMG_1563.png",
+        "run1": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run1/test_IMG_1563.png",
+        "run2": "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-manual-20261013/comparison/run2/test_IMG_1563.png"
+      },
+      "comparisons": {
+        "run0_vs_gt": {
+          "repair": {
+            "pixels": 1285,
+            "sse_rgb": 608.6088119953863,
+            "mse_rgb": 0.15787517820891991,
+            "psnr_db": 8.01686146206324
+          },
+          "nonrepair": {
+            "pixels": 86299,
+            "sse_rgb": 1527.2809073433295,
+            "mse_rgb": 0.005899183487422912,
+            "psnr_db": 22.292080953826474
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2135.889719338716,
+            "mse_rgb": 0.008128918978118972,
+            "psnr_db": 20.899672050889965
+          }
+        },
+        "run1_vs_gt": {
+          "repair": {
+            "pixels": 1285,
+            "sse_rgb": 159.46214532871974,
+            "mse_rgb": 0.041365018243507065,
+            "psnr_db": 13.83366779796592
+          },
+          "nonrepair": {
+            "pixels": 86299,
+            "sse_rgb": 471.32782775855435,
+            "mse_rgb": 0.001820522554369322,
+            "psnr_db": 27.398039362425543
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 630.7899730872742,
+            "mse_rgb": 0.0024007047447299136,
+            "psnr_db": 26.196612491971976
+          }
+        },
+        "run2_vs_gt": {
+          "repair": {
+            "pixels": 1285,
+            "sse_rgb": 19.593064206074587,
+            "mse_rgb": 0.005082506927645807,
+            "psnr_db": 22.939220207300032
+          },
+          "nonrepair": {
+            "pixels": 86299,
+            "sse_rgb": 462.41036524413687,
+            "mse_rgb": 0.0017860784993419655,
+            "psnr_db": 27.480994574957037
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 482.0034294502114,
+            "mse_rgb": 0.0018344424759857638,
+            "psnr_db": 27.364959021983854
+          }
+        },
+        "run2_vs_run1": {
+          "repair": {
+            "pixels": 1285,
+            "sse_rgb": 163.60053825451752,
+            "mse_rgb": 0.04243853132412906,
+            "psnr_db": 13.722396541972568
+          },
+          "nonrepair": {
+            "pixels": 86299,
+            "sse_rgb": 157.52304498269893,
+            "mse_rgb": 0.0006084390509843642,
+            "psnr_db": 32.157829197295634
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 321.1235832372164,
+            "mse_rgb": 0.0012221546676608223,
+            "psnr_db": 29.12873829231705
+          }
+        },
+        "run1_vs_run0": {
+          "repair": {
+            "pixels": 1285,
+            "sse_rgb": 1069.911880046136,
+            "mse_rgb": 0.27753874968771364,
+            "psnr_db": 5.56676372538832
+          },
+          "nonrepair": {
+            "pixels": 86299,
+            "sse_rgb": 1352.585667051134,
+            "mse_rgb": 0.005224416146386918,
+            "psnr_db": 22.819622370007156
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 2422.4975470972704,
+            "mse_rgb": 0.00921971116146507,
+            "psnr_db": 20.35282684472053
+          }
+        },
+        "run2_vs_run0": {
+          "repair": {
+            "pixels": 1285,
+            "sse_rgb": 568.2171011149558,
+            "mse_rgb": 0.14739743219583806,
+            "psnr_db": 8.315100822360709
+          },
+          "nonrepair": {
+            "pixels": 86299,
+            "sse_rgb": 1089.5678431372548,
+            "mse_rgb": 0.004208499299479155,
+            "psnr_db": 23.758727407780583
+          },
+          "full": {
+            "pixels": 87584,
+            "sse_rgb": 1657.7849442522106,
+            "mse_rgb": 0.006309314274495382,
+            "psnr_db": 22.00017839327289
+          }
+        }
+      }
+    }
+  ]
+}

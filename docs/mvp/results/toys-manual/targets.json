@@ -1,0 +1,650 @@
+{
+  "definition": "Target-only white render >0.05 intersect nearest-resized official unseen_mask; estimated support, not semantic GT",
+  "targets": {
+    "23": {
+      "target_ply_sha256": "04e032f9b324ffc62b2dc1b951ff41729442640e11737ad3b4d48178c50c5662",
+      "views": [
+        {
+          "view": "test_IMG_1554",
+          "support_pixels": 1223,
+          "eval_pixels": 578,
+          "errors": {
+            "run1": {
+              "pixels": 578,
+              "sse_rgb": 27.978746635909268,
+              "mse_rgb": 0.016135378682761978,
+              "psnr_db": 17.922208376412947
+            },
+            "run2": {
+              "pixels": 578,
+              "sse_rgb": 4.530088427527874,
+              "mse_rgb": 0.0026125077436723607,
+              "psnr_db": 25.829424135969884
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1555",
+          "support_pixels": 1602,
+          "eval_pixels": 989,
+          "errors": {
+            "run1": {
+              "pixels": 989,
+              "sse_rgb": 39.2160246059208,
+              "mse_rgb": 0.013217399597546612,
+              "psnr_db": 18.78853979912606
+            },
+            "run2": {
+              "pixels": 989,
+              "sse_rgb": 9.024882737408689,
+              "mse_rgb": 0.0030417535346844247,
+              "psnr_db": 25.168759786008845
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1556",
+          "support_pixels": 1768,
+          "eval_pixels": 1357,
+          "errors": {
+            "run1": {
+              "pixels": 1357,
+              "sse_rgb": 38.59806228373702,
+              "mse_rgb": 0.00948122384763867,
+              "psnr_db": 20.23135599795826
+            },
+            "run2": {
+              "pixels": 1357,
+              "sse_rgb": 10.800338331410995,
+              "mse_rgb": 0.002652993940410463,
+              "psnr_db": 25.762637419699153
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1557",
+          "support_pixels": 1718,
+          "eval_pixels": 1201,
+          "errors": {
+            "run1": {
+              "pixels": 1201,
+              "sse_rgb": 30.418608227604768,
+              "mse_rgb": 0.008442577914961079,
+              "psnr_db": 20.735249226520995
+            },
+            "run2": {
+              "pixels": 1201,
+              "sse_rgb": 8.68493656286044,
+              "mse_rgb": 0.002410473650530236,
+              "psnr_db": 26.1789761153292
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1558",
+          "support_pixels": 1473,
+          "eval_pixels": 819,
+          "errors": {
+            "run1": {
+              "pixels": 819,
+              "sse_rgb": 21.862406766628222,
+              "mse_rgb": 0.008898008452026138,
+              "psnr_db": 20.507071860608256
+            },
+            "run2": {
+              "pixels": 819,
+              "sse_rgb": 6.350034602076125,
+              "mse_rgb": 0.0025844666675116502,
+              "psnr_db": 25.876290646605806
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1559",
+          "support_pixels": 1268,
+          "eval_pixels": 413,
+          "errors": {
+            "run1": {
+              "pixels": 413,
+              "sse_rgb": 8.872910419069589,
+              "mse_rgb": 0.0071613481994104835,
+              "psnr_db": 21.45005209473391
+            },
+            "run2": {
+              "pixels": 413,
+              "sse_rgb": 4.89839292579777,
+              "mse_rgb": 0.003953505186277458,
+              "psnr_db": 24.03017687150986
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1560",
+          "support_pixels": 1214,
+          "eval_pixels": 395,
+          "errors": {
+            "run1": {
+              "pixels": 395,
+              "sse_rgb": 13.553525567089583,
+              "mse_rgb": 0.011437574318219058,
+              "psnr_db": 19.41666070989969
+            },
+            "run2": {
+              "pixels": 395,
+              "sse_rgb": 6.397247212610534,
+              "mse_rgb": 0.005398520854523657,
+              "psnr_db": 22.677252166055588
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1561",
+          "support_pixels": 1099,
+          "eval_pixels": 335,
+          "errors": {
+            "run1": {
+              "pixels": 335,
+              "sse_rgb": 12.436524413687044,
+              "mse_rgb": 0.012374651157897557,
+              "psnr_db": 19.074670350073653
+            },
+            "run2": {
+              "pixels": 335,
+              "sse_rgb": 2.2673433294886585,
+              "mse_rgb": 0.0022560630144165756,
+              "psnr_db": 26.466487741784107
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1562",
+          "support_pixels": 956,
+          "eval_pixels": 295,
+          "errors": {
+            "run1": {
+              "pixels": 295,
+              "sse_rgb": 11.49281045751634,
+              "mse_rgb": 0.012986226505668181,
+              "psnr_db": 18.86517026436009
+            },
+            "run2": {
+              "pixels": 295,
+              "sse_rgb": 2.013179546328335,
+              "mse_rgb": 0.002274779148393599,
+              "psnr_db": 26.430607613320834
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1563",
+          "support_pixels": 875,
+          "eval_pixels": 272,
+          "errors": {
+            "run1": {
+              "pixels": 272,
+              "sse_rgb": 14.590173010380623,
+              "mse_rgb": 0.017880113983309586,
+              "psnr_db": 17.47629716962663
+            },
+            "run2": {
+              "pixels": 272,
+              "sse_rgb": 1.574086889657824,
+              "mse_rgb": 0.0019290280510512548,
+              "psnr_db": 27.146614569967603
+            }
+          }
+        }
+      ],
+      "aggregate": {
+        "run1": {
+          "views": 10,
+          "nonempty_views": 10,
+          "pixels": 6654,
+          "pixel_weighted_mse_rgb": 0.01097183610798233,
+          "pixel_weighted_psnr_db": 19.597206883014223,
+          "view_mean_mse_rgb": 0.011801450265943935,
+          "view_mean_psnr_db": 19.44672758493205
+        },
+        "run2": {
+          "views": 10,
+          "nonempty_views": 10,
+          "pixels": 6654,
+          "pixel_weighted_mse_rgb": 0.0028324081036553072,
+          "pixel_weighted_psnr_db": 25.478441717462363,
+          "view_mean_mse_rgb": 0.002911409179147168,
+          "view_mean_psnr_db": 25.556722706625088
+        }
+      }
+    },
+    "28": {
+      "target_ply_sha256": "2d346d47b36e2ca7bdbfb8758f62249b8d4fb74e31d13a621b695cb15b1d114a",
+      "views": [
+        {
+          "view": "test_IMG_1554",
+          "support_pixels": 1421,
+          "eval_pixels": 590,
+          "errors": {
+            "run1": {
+              "pixels": 590,
+              "sse_rgb": 117.51300269127258,
+              "mse_rgb": 0.06639152694422179,
+              "psnr_db": 11.778873428634908
+            },
+            "run2": {
+              "pixels": 590,
+              "sse_rgb": 17.128596693579393,
+              "mse_rgb": 0.009677173273208696,
+              "psnr_db": 20.14251482684069
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1555",
+          "support_pixels": 1368,
+          "eval_pixels": 589,
+          "errors": {
+            "run1": {
+              "pixels": 589,
+              "sse_rgb": 112.80298346789696,
+              "mse_rgb": 0.06383870032139047,
+              "psnr_db": 11.949159632769074
+            },
+            "run2": {
+              "pixels": 589,
+              "sse_rgb": 14.882352941176471,
+              "mse_rgb": 0.008422384233829355,
+              "psnr_db": 20.745649497092202
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1556",
+          "support_pixels": 1524,
+          "eval_pixels": 627,
+          "errors": {
+            "run1": {
+              "pixels": 627,
+              "sse_rgb": 118.08658208381391,
+              "mse_rgb": 0.06277861886433488,
+              "psnr_db": 12.021882430513335
+            },
+            "run2": {
+              "pixels": 627,
+              "sse_rgb": 14.607720107650904,
+              "mse_rgb": 0.007765933071584744,
+              "psnr_db": 21.09806356613391
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1557",
+          "support_pixels": 1403,
+          "eval_pixels": 526,
+          "errors": {
+            "run1": {
+              "pixels": 526,
+              "sse_rgb": 98.10173010380623,
+              "mse_rgb": 0.062168396770472895,
+              "psnr_db": 12.064303322894716
+            },
+            "run2": {
+              "pixels": 526,
+              "sse_rgb": 10.880861207227989,
+              "mse_rgb": 0.006895349307495557,
+              "psnr_db": 21.614437282589446
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1558",
+          "support_pixels": 1420,
+          "eval_pixels": 553,
+          "errors": {
+            "run1": {
+              "pixels": 553,
+              "sse_rgb": 114.94068435217224,
+              "mse_rgb": 0.06928311293078496,
+              "psnr_db": 11.593726074472553
+            },
+            "run2": {
+              "pixels": 553,
+              "sse_rgb": 10.113094963475588,
+              "mse_rgb": 0.00609589810938854,
+              "psnr_db": 22.149623006743827
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1559",
+          "support_pixels": 1151,
+          "eval_pixels": 362,
+          "errors": {
+            "run1": {
+              "pixels": 362,
+              "sse_rgb": 76.0799846212995,
+              "mse_rgb": 0.07005523445791852,
+              "psnr_db": 11.545594091111342
+            },
+            "run2": {
+              "pixels": 362,
+              "sse_rgb": 6.354033064206074,
+              "mse_rgb": 0.0058508591751437146,
+              "psnr_db": 22.327803548364734
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1560",
+          "support_pixels": 1385,
+          "eval_pixels": 437,
+          "errors": {
+            "run1": {
+              "pixels": 437,
+              "sse_rgb": 83.16776624375241,
+              "mse_rgb": 0.06343841818745416,
+              "psnr_db": 11.976476545212327
+            },
+            "run2": {
+              "pixels": 437,
+              "sse_rgb": 8.182837370242215,
+              "mse_rgb": 0.006241676102396808,
+              "psnr_db": 22.046987718115865
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1561",
+          "support_pixels": 1452,
+          "eval_pixels": 427,
+          "errors": {
+            "run1": {
+              "pixels": 427,
+              "sse_rgb": 85.20788927335641,
+              "mse_rgb": 0.06651669732502452,
+              "psnr_db": 11.770693224279455
+            },
+            "run2": {
+              "pixels": 427,
+              "sse_rgb": 8.145990003844673,
+              "mse_rgb": 0.00635908665405517,
+              "psnr_db": 21.966052569283878
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1562",
+          "support_pixels": 1487,
+          "eval_pixels": 431,
+          "errors": {
+            "run1": {
+              "pixels": 431,
+              "sse_rgb": 100.02683583237217,
+              "mse_rgb": 0.07736027519905041,
+              "psnr_db": 11.114819939765486
+            },
+            "run2": {
+              "pixels": 431,
+              "sse_rgb": 9.82009996155325,
+              "mse_rgb": 0.007594818222392305,
+              "psnr_db": 21.194826162655396
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1563",
+          "support_pixels": 1480,
+          "eval_pixels": 404,
+          "errors": {
+            "run1": {
+              "pixels": 404,
+              "sse_rgb": 106.34160707420223,
+              "mse_rgb": 0.08774059989620646,
+              "psnr_db": 10.567994005816148
+            },
+            "run2": {
+              "pixels": 404,
+              "sse_rgb": 11.350818915801614,
+              "mse_rgb": 0.009365362141750508,
+              "psnr_db": 20.28475424575655
+            }
+          }
+        }
+      ],
+      "aggregate": {
+        "run1": {
+          "views": 10,
+          "nonempty_views": 10,
+          "pixels": 4946,
+          "pixel_weighted_mse_rgb": 0.06822139545383102,
+          "pixel_weighted_psnr_db": 11.66079401438438,
+          "view_mean_mse_rgb": 0.06895715808968592,
+          "view_mean_psnr_db": 11.638352269546935
+        },
+        "run2": {
+          "views": 10,
+          "nonempty_views": 10,
+          "pixels": 4946,
+          "pixel_weighted_mse_rgb": 0.0075122257196898615,
+          "pixel_weighted_psnr_db": 21.242313713086368,
+          "view_mean_mse_rgb": 0.00742685402912454,
+          "view_mean_psnr_db": 21.35707124235765
+        }
+      }
+    },
+    "27": {
+      "target_ply_sha256": "a2c75a2fdf1dc8f2a4e864bc9222533d071eb973697d2a7a990d3054f163b2c2",
+      "views": [
+        {
+          "view": "test_IMG_1554",
+          "support_pixels": 1497,
+          "eval_pixels": 386,
+          "errors": {
+            "run1": {
+              "pixels": 386,
+              "sse_rgb": 18.304975009611688,
+              "mse_rgb": 0.015807405016935828,
+              "psnr_db": 18.01139419082644
+            },
+            "run2": {
+              "pixels": 386,
+              "sse_rgb": 5.2847673971549405,
+              "mse_rgb": 0.00456370241550513,
+              "psnr_db": 23.40682682290101
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1555",
+          "support_pixels": 1012,
+          "eval_pixels": 224,
+          "errors": {
+            "run1": {
+              "pixels": 224,
+              "sse_rgb": 11.684505959246444,
+              "mse_rgb": 0.017387657677450066,
+              "psnr_db": 17.59758918645563
+            },
+            "run2": {
+              "pixels": 224,
+              "sse_rgb": 2.20721261053441,
+              "mse_rgb": 0.003284542575200015,
+              "psnr_db": 24.8352510430784
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1556",
+          "support_pixels": 939,
+          "eval_pixels": 191,
+          "errors": {
+            "run1": {
+              "pixels": 191,
+              "sse_rgb": 9.940284505959246,
+              "mse_rgb": 0.01734779145891666,
+              "psnr_db": 17.60755807228032
+            },
+            "run2": {
+              "pixels": 191,
+              "sse_rgb": 1.8867820069204153,
+              "mse_rgb": 0.003292813275602819,
+              "psnr_db": 24.824328959733503
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1557",
+          "support_pixels": 838,
+          "eval_pixels": 176,
+          "errors": {
+            "run1": {
+              "pixels": 176,
+              "sse_rgb": 10.941361014994232,
+              "mse_rgb": 0.020722274649610288,
+              "psnr_db": 16.835625745274932
+            },
+            "run2": {
+              "pixels": 176,
+              "sse_rgb": 1.5156939638600537,
+              "mse_rgb": 0.002870632507310708,
+              "psnr_db": 25.420224014646593
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1558",
+          "support_pixels": 1178,
+          "eval_pixels": 272,
+          "errors": {
+            "run1": {
+              "pixels": 272,
+              "sse_rgb": 14.501084198385236,
+              "mse_rgb": 0.017770936517628965,
+              "psnr_db": 17.50289684534529
+            },
+            "run2": {
+              "pixels": 272,
+              "sse_rgb": 2.457777777777778,
+              "mse_rgb": 0.0030119825708061,
+              "psnr_db": 25.211475455605253
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1559",
+          "support_pixels": 1567,
+          "eval_pixels": 277,
+          "errors": {
+            "run1": {
+              "pixels": 277,
+              "sse_rgb": 12.902083813917724,
+              "mse_rgb": 0.01552597330194672,
+              "psnr_db": 18.08941164973271
+            },
+            "run2": {
+              "pixels": 277,
+              "sse_rgb": 2.444490580545944,
+              "mse_rgb": 0.0029416252473477063,
+              "psnr_db": 25.314126556654596
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1560",
+          "support_pixels": 2287,
+          "eval_pixels": 406,
+          "errors": {
+            "run1": {
+              "pixels": 406,
+              "sse_rgb": 18.79121876201461,
+              "mse_rgb": 0.01542793001807439,
+              "psnr_db": 18.11692339784804
+            },
+            "run2": {
+              "pixels": 406,
+              "sse_rgb": 4.882906574394464,
+              "mse_rgb": 0.004008954494576736,
+              "psnr_db": 23.969688733744178
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1561",
+          "support_pixels": 2475,
+          "eval_pixels": 440,
+          "errors": {
+            "run1": {
+              "pixels": 440,
+              "sse_rgb": 19.442122260668974,
+              "mse_rgb": 0.014728880500506799,
+              "psnr_db": 18.318302613670745
+            },
+            "run2": {
+              "pixels": 440,
+              "sse_rgb": 5.407335640138409,
+              "mse_rgb": 0.004096466394044249,
+              "psnr_db": 23.875906035876948
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1562",
+          "support_pixels": 2487,
+          "eval_pixels": 612,
+          "errors": {
+            "run1": {
+              "pixels": 612,
+              "sse_rgb": 28.261130334486737,
+              "mse_rgb": 0.015392772513337002,
+              "psnr_db": 18.126831489275897
+            },
+            "run2": {
+              "pixels": 612,
+              "sse_rgb": 7.84321414840446,
+              "mse_rgb": 0.004271903130939249,
+              "psnr_db": 23.693786038670307
+            }
+          }
+        },
+        {
+          "view": "test_IMG_1563",
+          "support_pixels": 2237,
+          "eval_pixels": 607,
+          "errors": {
+            "run1": {
+              "pixels": 607,
+              "sse_rgb": 38.488166089965404,
+              "mse_rgb": 0.021135730966482923,
+              "psnr_db": 16.749827277630228
+            },
+            "run2": {
+              "pixels": 607,
+              "sse_rgb": 6.667358708189159,
+              "mse_rgb": 0.003661372162651927,
+              "psnr_db": 24.3635612471819
+            }
+          }
+        }
+      ],
+      "aggregate": {
+        "run1": {
+          "views": 10,
+          "nonempty_views": 10,
+          "pixels": 3591,
+          "pixel_weighted_mse_rgb": 0.017010761343103156,
+          "pixel_weighted_psnr_db": 17.69276248426872,
+          "view_mean_mse_rgb": 0.017124735262088967,
+          "view_mean_psnr_db": 17.695636046834025
+        },
+        "run2": {
+          "views": 10,
+          "nonempty_views": 10,
+          "pixels": 3591,
+          "pixel_weighted_mse_rgb": 0.003768452558054399,
+          "pixel_weighted_psnr_db": 24.238369477943085,
+          "view_mean_mse_rgb": 0.003600399477398464,
+          "view_mean_psnr_db": 24.491517490809272
+        }
+      }
+    }
+  }
+}

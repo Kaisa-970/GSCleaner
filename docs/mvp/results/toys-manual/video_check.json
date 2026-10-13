@@ -1,0 +1,10 @@
+{
+  "decoded_frames": 240,
+  "fps": 30.0,
+  "source_size": [
+    736,
+    238
+  ],
+  "review": "RGB left half; every 20th frame contact sheet",
+  "all_frames_decoded": true
+}

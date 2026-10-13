@@ -1,0 +1,4 @@
+# Local MVP cache and tracking input bundle
+__pycache__/
+*.py[cod]
+/docs/mvp/results/toys/images.zip

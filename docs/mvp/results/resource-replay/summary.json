@@ -1,0 +1,170 @@
+{
+  "type": "independent step resource replays; not historical baseline measurements nor one end-to-end retrain",
+  "steps": {
+    "deletion-resource.json": {
+      "command": [
+        "python",
+        "/tmp/export_removal.py",
+        "--repo",
+        "/mnt/data/ypk/Projects/Inpaint360GS",
+        "--checkpoint",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-20261013/model/point_cloud/iteration_2000/point_cloud.ply",
+        "--classifier",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-20261013/model/point_cloud/iteration_2000/classifier.pth",
+        "--reference",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-20261013/removal/point_cloud_object_removal/iteration_2000/point_cloud.ply",
+        "--output",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/removal",
+        "--ids",
+        "23",
+        "28",
+        "27"
+      ],
+      "started_utc": "2026-10-13T07:06:02.474080+00:00",
+      "ended_utc": "2026-10-13T07:06:07.747627+00:00",
+      "elapsed_seconds": 5.273559808731079,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 838,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    },
+    "distillation-resource.json": {
+      "command": [
+        "python",
+        "seg/distillation.py",
+        "--source_path",
+        "data/inpaint360/toys",
+        "--model_path",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/distillation_model",
+        "--vanilla_3dgs_path",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-toys-20261013/3dgs_output",
+        "--resolution",
+        "8",
+        "--object_path",
+        "associated_hqsam",
+        "--eval",
+        "--save_iterations",
+        "2000"
+      ],
+      "started_utc": "2026-10-13T07:11:26.012301+00:00",
+      "ended_utc": "2026-10-13T07:12:11.720346+00:00",
+      "elapsed_seconds": 45.70806288719177,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 3192,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    },
+    "repair/fusion-resource.json": {
+      "command": [
+        "python",
+        "edit_object_removal_plyfusion.py",
+        "-s",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/repair/data/inpaint360/toys",
+        "-m",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/repair/model",
+        "--config_file",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/repair/config/object_removal/toys.json"
+      ],
+      "started_utc": "2026-10-13T07:06:58.334153+00:00",
+      "ended_utc": "2026-10-13T07:07:13.052279+00:00",
+      "elapsed_seconds": 14.718149900436401,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 534,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    },
+    "repair/lama-color-resource.json": {
+      "command": [
+        "python",
+        "bin/predict_color.py",
+        "--data_name",
+        "360_toys_virtual"
+      ],
+      "started_utc": "2026-10-13T07:06:48.551155+00:00",
+      "ended_utc": "2026-10-13T07:06:53.291280+00:00",
+      "elapsed_seconds": 4.740150690078735,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 1320,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    },
+    "repair/lama-depth-resource.json": {
+      "command": [
+        "python",
+        "bin/predict_depth.py",
+        "--data_name",
+        "360_toys_virtual"
+      ],
+      "started_utc": "2026-10-13T07:06:53.316370+00:00",
+      "ended_utc": "2026-10-13T07:06:58.035426+00:00",
+      "elapsed_seconds": 4.719070672988892,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 1320,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    },
+    "repair/optimization-resource.json": {
+      "command": [
+        "python",
+        "/tmp/run_inpaint_verified.py",
+        "-s",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/repair/data/inpaint360/toys",
+        "-m",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/repair/model",
+        "--config_file",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/repair/config/object_inpaint/toys.json",
+        "--resolution",
+        "8",
+        "--render_video"
+      ],
+      "started_utc": "2026-10-13T07:07:13.076625+00:00",
+      "ended_utc": "2026-10-13T07:09:20.741394+00:00",
+      "elapsed_seconds": 127.66478157043457,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 1564,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    },
+    "training-resource.json": {
+      "command": [
+        "python",
+        "gaussian_splatting/train.py",
+        "-s",
+        "data/inpaint360/toys",
+        "-m",
+        "/mnt/data/ypk/Projects/Inpaint360GS/output/mvp-resource-replay-20261013/3dgs_output",
+        "--init_mode",
+        "sparse",
+        "--eval",
+        "--resolution",
+        "8",
+        "--iterations",
+        "1000",
+        "--save_iterations",
+        "1000",
+        "--test_iterations",
+        "1000"
+      ],
+      "started_utc": "2026-10-13T07:05:44.043183+00:00",
+      "ended_utc": "2026-10-13T07:06:02.446115+00:00",
+      "elapsed_seconds": 18.402950525283813,
+      "exit_code": 0,
+      "peak_sampled_process_gpu_mib": 878,
+      "sample_interval_seconds": 0.5,
+      "measurement_errors": [],
+      "limitations": "Sampled process-tree GPU usage, not instantaneous peak; may miss spikes between samples."
+    }
+  },
+  "deletion_gate": {
+    "exact_match": true,
+    "source_count": 211981,
+    "removed": 7088,
+    "timestamp": 1791875243.4035482
+  }
+}

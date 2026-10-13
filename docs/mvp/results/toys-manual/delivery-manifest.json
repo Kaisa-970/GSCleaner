@@ -1,0 +1,100 @@
+{
+  "user_dynamic_acceptance": "passed",
+  "artifacts": [
+    {
+      "file": "README.md",
+      "bytes": 5642,
+      "sha256": "a1c74db17875f14643d1bc3c0875863594fd05c37c1098e415ff53e88cee729c"
+    },
+    {
+      "file": "comparison.png",
+      "bytes": 4225400,
+      "sha256": "4f11c46779594e324a301dec549771ac626c66cba2c122d4b16e0ccef7f1a028"
+    },
+    {
+      "file": "deletion_gate.json",
+      "bytes": 106,
+      "sha256": "88349208cc5220c9ae3aba9b82f56e4033daa18a9d9bc8c0f688311115013dcd"
+    },
+    {
+      "file": "holdout-comparison.png",
+      "bytes": 6167917,
+      "sha256": "e24d28adf524e06761ec62428b4d117f7a7a6bdc9ff80779e617b1b31488d93a"
+    },
+    {
+      "file": "holdout-manifest.json",
+      "bytes": 3141,
+      "sha256": "404ce38a43b08c71a344bbd995dea8ac8c274c6fa41b0b2fe22cb892f7f0e2b3"
+    },
+    {
+      "file": "mask_preprocessing.json",
+      "bytes": 2787,
+      "sha256": "8f82cae009bed07e196a3bb338cc1211b0f53e12bb443b3de1b16611a51de936"
+    },
+    {
+      "file": "provenance.json",
+      "bytes": 1237,
+      "sha256": "29c1928840bac8a0e66ffcadacf94511d4f1244aad3400f93763256a6ec68813"
+    },
+    {
+      "file": "regions.csv",
+      "bytes": 21219,
+      "sha256": "92364fbf0d7eafcd7642676076ec220775c5022fe18f6a262f630ad9030388c2"
+    },
+    {
+      "file": "regions.json",
+      "bytes": 53964,
+      "sha256": "7085e648ad81b7fd1fa205d64e68afb72a5ec00e48f3dc8ea34765b7523a2f81"
+    },
+    {
+      "file": "reproduction-evidence.tar.gz",
+      "bytes": 114088,
+      "sha256": "7bff7ece894966f1d82f1507d75b01ee21c1050217d2994e5ac37eb9fbca80e6"
+    },
+    {
+      "file": "rgb_review.mp4",
+      "bytes": 1601000,
+      "sha256": "861f3584192b71b81c10abf65fb756f8aa8082122a1bc2acce154b472d315959"
+    },
+    {
+      "file": "run-remote.sh",
+      "bytes": 1623,
+      "sha256": "7576d190716a817285468872d5eab93cc69ee4700c60c4ad81bfd3e9cf6b9e54"
+    },
+    {
+      "file": "runtime.json",
+      "bytes": 117,
+      "sha256": "a5f174e79adf59819c0121e42ed37225c8c3aedeac11a51283f770212d702efe"
+    },
+    {
+      "file": "targets.json",
+      "bytes": 19255,
+      "sha256": "2a635167a54f90edab0e228df5cec4cbf8210a576173eb11b4ddddcf3f82694e"
+    },
+    {
+      "file": "trajectory_contact.png",
+      "bytes": 1420394,
+      "sha256": "6a2b5330b682e6174cbac6c5b76d931be957a1b97c329c369f16ed79200fe05c"
+    },
+    {
+      "file": "video_check.json",
+      "bytes": 175,
+      "sha256": "02d14e3a080937c7fe1cbd5feb2c76d8428bd3c07d92c7b5a7c05b888385cf6c"
+    }
+  ],
+  "script_syntax_checked": [
+    "scripts/mvp/diagnose_black_regions.py",
+    "scripts/mvp/evaluate_regions.py",
+    "scripts/mvp/evaluate_targets.py",
+    "scripts/mvp/export_removal.py",
+    "scripts/mvp/measure_step.py",
+    "scripts/mvp/render_comparison.py",
+    "scripts/mvp/run_inpaint_verified.py"
+  ],
+  "remaining_limitations": [
+    "Target regions are projected support estimates, not manually validated semantic GT",
+    "Historical full-pipeline peak GPU usage not recorded",
+    "Nonrepair PSNR decreased 0.282 dB"
+  ],
+  "resource_evidence": "../resource-replay/summary.json"
+}

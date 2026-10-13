@@ -1,0 +1,418 @@
+{
+  "thresholds": {
+    "dark_rgb_mean": 0.15,
+    "gt_brightness_excess": 0.12,
+    "low_alpha": 0.8,
+    "weak_target_probability": 0.1
+  },
+  "views": [
+    {
+      "name": "test_IMG_0185",
+      "dark": 809,
+      "low_alpha_hole": 267,
+      "possible_residual": 265,
+      "opaque_background_defect": 277
+    },
+    {
+      "name": "test_IMG_0186",
+      "dark": 1006,
+      "low_alpha_hole": 167,
+      "possible_residual": 318,
+      "opaque_background_defect": 521
+    },
+    {
+      "name": "test_IMG_0187",
+      "dark": 1188,
+      "low_alpha_hole": 0,
+      "possible_residual": 428,
+      "opaque_background_defect": 760
+    },
+    {
+      "name": "test_IMG_0188",
+      "dark": 1344,
+      "low_alpha_hole": 119,
+      "possible_residual": 476,
+      "opaque_background_defect": 749
+    },
+    {
+      "name": "test_IMG_0189",
+      "dark": 1213,
+      "low_alpha_hole": 0,
+      "possible_residual": 481,
+      "opaque_background_defect": 732
+    },
+    {
+      "name": "test_IMG_0190",
+      "dark": 1121,
+      "low_alpha_hole": 283,
+      "possible_residual": 363,
+      "opaque_background_defect": 475
+    },
+    {
+      "name": "test_IMG_0191",
+      "dark": 781,
+      "low_alpha_hole": 204,
+      "possible_residual": 298,
+      "opaque_background_defect": 279
+    },
+    {
+      "name": "test_IMG_0192",
+      "dark": 588,
+      "low_alpha_hole": 2,
+      "possible_residual": 303,
+      "opaque_background_defect": 283
+    },
+    {
+      "name": "test_IMG_0193",
+      "dark": 681,
+      "low_alpha_hole": 0,
+      "possible_residual": 373,
+      "opaque_background_defect": 308
+    },
+    {
+      "name": "test_IMG_0194",
+      "dark": 802,
+      "low_alpha_hole": 28,
+      "possible_residual": 370,
+      "opaque_background_defect": 404
+    },
+    {
+      "name": "test_IMG_0195",
+      "dark": 751,
+      "low_alpha_hole": 49,
+      "possible_residual": 347,
+      "opaque_background_defect": 355
+    },
+    {
+      "name": "test_IMG_0196",
+      "dark": 548,
+      "low_alpha_hole": 0,
+      "possible_residual": 307,
+      "opaque_background_defect": 241
+    },
+    {
+      "name": "test_IMG_0197",
+      "dark": 483,
+      "low_alpha_hole": 2,
+      "possible_residual": 292,
+      "opaque_background_defect": 189
+    },
+    {
+      "name": "test_IMG_0198",
+      "dark": 475,
+      "low_alpha_hole": 7,
+      "possible_residual": 292,
+      "opaque_background_defect": 176
+    },
+    {
+      "name": "test_IMG_0199",
+      "dark": 520,
+      "low_alpha_hole": 40,
+      "possible_residual": 281,
+      "opaque_background_defect": 199
+    },
+    {
+      "name": "test_IMG_0200",
+      "dark": 520,
+      "low_alpha_hole": 1,
+      "possible_residual": 301,
+      "opaque_background_defect": 218
+    },
+    {
+      "name": "test_IMG_0201",
+      "dark": 499,
+      "low_alpha_hole": 0,
+      "possible_residual": 271,
+      "opaque_background_defect": 228
+    },
+    {
+      "name": "test_IMG_0202",
+      "dark": 621,
+      "low_alpha_hole": 0,
+      "possible_residual": 287,
+      "opaque_background_defect": 334
+    },
+    {
+      "name": "test_IMG_0203",
+      "dark": 626,
+      "low_alpha_hole": 0,
+      "possible_residual": 271,
+      "opaque_background_defect": 355
+    },
+    {
+      "name": "test_IMG_0204",
+      "dark": 560,
+      "low_alpha_hole": 0,
+      "possible_residual": 266,
+      "opaque_background_defect": 294
+    },
+    {
+      "name": "test_IMG_0205",
+      "dark": 576,
+      "low_alpha_hole": 2,
+      "possible_residual": 241,
+      "opaque_background_defect": 333
+    },
+    {
+      "name": "test_IMG_0206",
+      "dark": 672,
+      "low_alpha_hole": 41,
+      "possible_residual": 274,
+      "opaque_background_defect": 357
+    },
+    {
+      "name": "test_IMG_0207",
+      "dark": 711,
+      "low_alpha_hole": 34,
+      "possible_residual": 311,
+      "opaque_background_defect": 366
+    },
+    {
+      "name": "test_IMG_0208",
+      "dark": 771,
+      "low_alpha_hole": 3,
+      "possible_residual": 349,
+      "opaque_background_defect": 419
+    },
+    {
+      "name": "test_IMG_0209",
+      "dark": 1066,
+      "low_alpha_hole": 77,
+      "possible_residual": 418,
+      "opaque_background_defect": 571
+    },
+    {
+      "name": "test_IMG_0210",
+      "dark": 1460,
+      "low_alpha_hole": 206,
+      "possible_residual": 466,
+      "opaque_background_defect": 788
+    },
+    {
+      "name": "test_IMG_0211",
+      "dark": 1633,
+      "low_alpha_hole": 80,
+      "possible_residual": 525,
+      "opaque_background_defect": 1028
+    },
+    {
+      "name": "test_IMG_0212",
+      "dark": 1682,
+      "low_alpha_hole": 339,
+      "possible_residual": 496,
+      "opaque_background_defect": 847
+    },
+    {
+      "name": "test_IMG_0213",
+      "dark": 1756,
+      "low_alpha_hole": 82,
+      "possible_residual": 539,
+      "opaque_background_defect": 1135
+    },
+    {
+      "name": "test_IMG_0214",
+      "dark": 1758,
+      "low_alpha_hole": 0,
+      "possible_residual": 590,
+      "opaque_background_defect": 1168
+    },
+    {
+      "name": "test_IMG_0215",
+      "dark": 1909,
+      "low_alpha_hole": 0,
+      "possible_residual": 666,
+      "opaque_background_defect": 1243
+    },
+    {
+      "name": "test_IMG_0216",
+      "dark": 1842,
+      "low_alpha_hole": 295,
+      "possible_residual": 606,
+      "opaque_background_defect": 941
+    },
+    {
+      "name": "test_IMG_0217",
+      "dark": 1435,
+      "low_alpha_hole": 426,
+      "possible_residual": 478,
+      "opaque_background_defect": 531
+    },
+    {
+      "name": "test_IMG_0218",
+      "dark": 1185,
+      "low_alpha_hole": 101,
+      "possible_residual": 539,
+      "opaque_background_defect": 545
+    },
+    {
+      "name": "test_IMG_0219",
+      "dark": 1086,
+      "low_alpha_hole": 1,
+      "possible_residual": 551,
+      "opaque_background_defect": 534
+    },
+    {
+      "name": "test_IMG_0220",
+      "dark": 1324,
+      "low_alpha_hole": 105,
+      "possible_residual": 542,
+      "opaque_background_defect": 677
+    },
+    {
+      "name": "test_IMG_0221",
+      "dark": 992,
+      "low_alpha_hole": 3,
+      "possible_residual": 486,
+      "opaque_background_defect": 503
+    },
+    {
+      "name": "test_IMG_0222",
+      "dark": 854,
+      "low_alpha_hole": 35,
+      "possible_residual": 433,
+      "opaque_background_defect": 386
+    },
+    {
+      "name": "test_IMG_0223",
+      "dark": 829,
+      "low_alpha_hole": 56,
+      "possible_residual": 431,
+      "opaque_background_defect": 342
+    },
+    {
+      "name": "test_IMG_0224",
+      "dark": 800,
+      "low_alpha_hole": 136,
+      "possible_residual": 387,
+      "opaque_background_defect": 277
+    },
+    {
+      "name": "test_IMG_0225",
+      "dark": 2731,
+      "low_alpha_hole": 0,
+      "possible_residual": 967,
+      "opaque_background_defect": 1764
+    },
+    {
+      "name": "test_IMG_0226",
+      "dark": 2023,
+      "low_alpha_hole": 7,
+      "possible_residual": 777,
+      "opaque_background_defect": 1239
+    },
+    {
+      "name": "test_IMG_0227",
+      "dark": 2597,
+      "low_alpha_hole": 160,
+      "possible_residual": 1022,
+      "opaque_background_defect": 1415
+    },
+    {
+      "name": "test_IMG_0228",
+      "dark": 2596,
+      "low_alpha_hole": 173,
+      "possible_residual": 877,
+      "opaque_background_defect": 1546
+    },
+    {
+      "name": "test_IMG_0229",
+      "dark": 3135,
+      "low_alpha_hole": 239,
+      "possible_residual": 968,
+      "opaque_background_defect": 1928
+    },
+    {
+      "name": "test_IMG_0230",
+      "dark": 3237,
+      "low_alpha_hole": 359,
+      "possible_residual": 875,
+      "opaque_background_defect": 2003
+    },
+    {
+      "name": "test_IMG_0231",
+      "dark": 3829,
+      "low_alpha_hole": 38,
+      "possible_residual": 1114,
+      "opaque_background_defect": 2677
+    },
+    {
+      "name": "test_IMG_0232",
+      "dark": 3459,
+      "low_alpha_hole": 0,
+      "possible_residual": 1042,
+      "opaque_background_defect": 2417
+    },
+    {
+      "name": "test_IMG_0233",
+      "dark": 3166,
+      "low_alpha_hole": 0,
+      "possible_residual": 978,
+      "opaque_background_defect": 2188
+    },
+    {
+      "name": "test_IMG_0234",
+      "dark": 3598,
+      "low_alpha_hole": 360,
+      "possible_residual": 1120,
+      "opaque_background_defect": 2118
+    },
+    {
+      "name": "test_IMG_0235",
+      "dark": 3475,
+      "low_alpha_hole": 1067,
+      "possible_residual": 1053,
+      "opaque_background_defect": 1355
+    },
+    {
+      "name": "test_IMG_0236",
+      "dark": 2922,
+      "low_alpha_hole": 362,
+      "possible_residual": 933,
+      "opaque_background_defect": 1627
+    },
+    {
+      "name": "test_IMG_0237",
+      "dark": 2295,
+      "low_alpha_hole": 273,
+      "possible_residual": 778,
+      "opaque_background_defect": 1244
+    },
+    {
+      "name": "test_IMG_0238",
+      "dark": 2439,
+      "low_alpha_hole": 340,
+      "possible_residual": 875,
+      "opaque_background_defect": 1224
+    },
+    {
+      "name": "test_IMG_0239",
+      "dark": 2446,
+      "low_alpha_hole": 29,
+      "possible_residual": 898,
+      "opaque_background_defect": 1519
+    },
+    {
+      "name": "test_IMG_0240",
+      "dark": 2045,
+      "low_alpha_hole": 0,
+      "possible_residual": 714,
+      "opaque_background_defect": 1331
+    },
+    {
+      "name": "test_IMG_0241",
+      "dark": 2630,
+      "low_alpha_hole": 118,
+      "possible_residual": 679,
+      "opaque_background_defect": 1833
+    },
+    {
+      "name": "test_IMG_0242",
+      "dark": 2573,
+      "low_alpha_hole": 236,
+      "possible_residual": 681,
+      "opaque_background_defect": 1656
+    }
+  ],
+  "remaining_target_probability_gt_0_1": 42,
+  "remaining_target_probability_gt_0_7": 0
+}

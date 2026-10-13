@@ -1,0 +1,30 @@
+{
+  "remote_root": "/mnt/data/ypk/Projects/Inpaint360GS",
+  "files": [
+    {
+      "path": "output/mvp-toys-manual-20261013/model/point_cloud/iteration_2000/point_cloud.ply",
+      "bytes": 66139993,
+      "sha256": "f3ff85a1ee44df748612213016f29cd9988decf451078b6d25aa07a553773c94"
+    },
+    {
+      "path": "output/mvp-toys-manual-20261013/model/point_cloud/iteration_2000/classifier.pth",
+      "bytes": 19389,
+      "sha256": "34e8e5b4ccbc568f62f816db11b315586ad506b218f36bb3190fa5cca0d80d24"
+    },
+    {
+      "path": "output/mvp-toys-manual-20261013/model/point_cloud_object_removal/iteration_2000/point_cloud.ply",
+      "bytes": 63928537,
+      "sha256": "f3e64f6f7b6a6dc2daaa98de38de92fe7ada0bd9ba4c0cb74ebf44f280a2d415"
+    },
+    {
+      "path": "output/mvp-toys-manual-20261013/model/point_cloud_object_inpaint_virtual/iteration_5000/point_cloud.ply",
+      "bytes": 67338697,
+      "sha256": "6bb5752ea556faebaae2ffd57cd041255c726b9c63b965d9c3d9c2403df3a29a"
+    }
+  ],
+  "archive": {
+    "sha256": "7bff7ece894966f1d82f1507d75b01ee21c1050217d2994e5ac37eb9fbca80e6",
+    "bytes": 114088
+  },
+  "resource_gap": "Historical full-pipeline peak GPU usage was not recorded; only optimization torch allocator peak available."
+}
