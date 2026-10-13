@@ -167,23 +167,13 @@ python edit_object_inpaint.py -s ...                             # 3DGS 微调
 
 ---
 
-## 6. SuperSplat 导出索引对应关系（外部信息，待实测）
+## 6. SuperSplat 版本与身份映射（版本已核验，行为待实测）
 
-**核心问题**：SuperSplat **1.0.0 起在加载时做 Morton / Z-order 重排**（为渲染做缓存友好排序，大场景最多快约 4×）。编辑后导出的索引**与原文件不对应**。
+2026-10-13 通过官方仓库核验：main commit `f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b`，package.json 版本 **3.5.2**。来源：[固定快照](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/package.json)。
 
-| 项 | 状态 |
-|---|---|
-| 官方开关 | `reorder: false`（新代码库为 `skipReorder`）可保留原始顺序 |
-| 代价 | 渲染性能下降 |
-| **陷阱** | **压缩 PLY 与 `.splat` 永远按 Morton 序写，不受该开关影响** |
-| 身份约定 | 关闭重排与未压缩导出不保证过滤/删除后索引不变；需源资产哈希、版本及编辑映射 |
-| 导出过滤 | 按 deleted 状态 / selection / opacity 阈值 / NaN-Inf 有效性过滤 |
+旧文档关于 1.0.0 起 Morton 重排、`reorder`/`skipReorder` 开关、压缩格式始终重排和性能增益的描述，本轮不作为 3.x 已验证事实。按固定 commit 分别验证加载重排、选择存储/读回和导出身份追踪，详见 [02-tools.md](02-tools.md) 第 2.6 节。
 
-> **信息强度说明**：本条来自文档与社区资料，**未在本机实测**。已列入 [05-roadmap.md](05-roadmap.md) 阶段 1/3 可选验证清单。
-
-删除/过滤会使位置索引变化，即使顺序未改变。跨轮训练的 split/clone 需父 ID，新补全 Gaussian 需新 ID；完整协议见 [04-architecture.md](04-architecture.md) 第六节。
-
-**对文档的修正**：[02-tools.md](02-tools.md) 第 2.6 节已从"用 SuperSplat 导出索引作监督真值"改为"附加条件，未改造前仅作人工复核前端"。
+一般身份约束仍成立：删除/过滤会改变位置索引，关闭重排不能替代源资产哈希、版本和编辑映射。跨轮训练 split/clone 需父 ID，补全新增需新 ID。尚未执行编辑器往返测试，不宣称现成稳定 ID 导出能力。
 
 ---
 

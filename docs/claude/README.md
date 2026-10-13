@@ -15,7 +15,7 @@
 | [01-landscape.md](01-landscape.md) | 方法调研：识别 / 修复 / 光照三条线 | 调研完成 |
 | [02-tools.md](02-tools.md) | 工具评估：SuperSplat、LichtFeld Studio | 调研完成，需实测验证 |
 | [03-inpaint360gs.md](03-inpaint360gs.md) | 代表作解剖：Inpaint360GS (WACV 2026) | 调研完成，**已源码校正** |
-| [04-architecture.md](04-architecture.md) | 架构设计：Capability-Tiered Pipeline + OperationPlan | 提案，待评审 |
+| [04-architecture.md](04-architecture.md) | 架构设计：数据产物协议 + RemovalAdapter + 能力清单 | 提案，待评审 |
 | [05-roadmap.md](05-roadmap.md) | 实施路线：四阶段 + 后续扩展 | 提案，待评审 |
 | [06-verification.md](06-verification.md) | **源码验证记录：论文与代码的落差** | 已验证 |
 
@@ -49,6 +49,8 @@ GS-IoU 负责已有 mask 的关联，不负责判断哪些物体不该保留。P
 本轮评审同步修订：虚拟相机渲染能力、holdout/干净参考区分、三类 mask、资产哈希与编辑映射、深度融合碰撞 mesh，以及四阶段实施路线。具体实验验收见 [05-roadmap.md](05-roadmap.md)。
 
 ---
+
+本轮接口修订（2026-10-13）：阶段 2 用 NativeBaseline 与编辑器解耦；ExternalSelection 单独验收。B0/B1 是删除对照与官方修复，B2/B3 是待开发增强。M4 按输入能力分级承诺，验收阈值先在开发场景校准，再冻结到独立样本。四类中间产物及适配契约见架构第二节。
 
 ## 已确认的需求约束
 

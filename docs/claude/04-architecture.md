@@ -36,6 +36,39 @@
 [Report]     输出 Mask（一等产物）+ 干净 PLY + 质量报告 + 降级警告
 ```
 
+### 稳定数据接口（首版协议提案，尚未实现）
+
+`SceneAsset → SelectionArtifact → RemovalAdapter → RecoveryArtifact → CleanSceneAsset`
+
+| 产物 | 必需内容 |
+|---|---|
+| `SceneAsset` | Gaussian 文件/格式、资产哈希/版本/谱系、原图及标定引用、坐标系/单位、能力清单；缺失项显式记录 |
+| `SelectionArtifact` | 绑定源资产的 Target、Keep、Remove、Protected 集合，2D mask 与相机引用，源索引/稳定 ID 和编辑映射，人工确认与选择来源 |
+| `RecoveryArtifact` | 背景分区及 mask、观测来源（原图/渲染/生成）、置信度、可训练 ID/参数、冻结和过渡带范围、后端/配置/转换记录 |
+| `CleanSceneAsset` | 输出 PLY/版本与身份谱系、编辑历史、RecoveryArtifact 引用、质量报告、验证状态与不可验证项 |
+
+四类产物均带 `schema_version`、唯一 artifact ID、关联资产哈希和生产工具版本。相机引用包含内外参及坐标约定；无真实尺度时单位标记 unknown。mask 极性、索引所属版本与选区冲突必须显式检查；Protected 与 Remove 相交时停止并要求修正。适配器只能产生本项目协议，算法核心不直接依赖编辑器内部 state。
+
+### RemovalAdapter：选择到修复后端的适配契约
+
+| 模式 | 输入与行为 | 状态 |
+|---|---|---|
+| `NativeBaseline` | 固定官方 commit、官方支持数据/配置、对象特征/分类器、2D mask 与人工核验目标 ID；沿用官方关联、删除及修复，记录实际删除集合 | 优先复现，独立于 GSCleaner 编辑器；尚未实跑 |
+| `ExternalSelection` | SceneAsset + 用户确认的 SelectionArtifact；验证身份映射并生成后端所需数据，或修改删除/准备步骤直接消费外部集合 | 待开发与验证；不是已有格式转换能力 |
+
+官方 `run_inpaint.sh` 不承诺接受任意 `remove_mask_3d`。外部编辑器导出的删后 PLY 也不能替代官方准备流程：它可能缺少被删除 Gaussian、对象特征、图像 mask、相机与场景配置。
+
+`ExternalSelection` 的验证步骤：
+
+1. 校验源资产身份、Gaussian 布局/数量/映射、相机坐标系与后端 checkpoint 的一致性；不能仅凭相同点数套用索引。
+2. 检查官方下游实际读取哪些对象特征、目标/周边对象 ID、原始/删后模型、图像 mask 和配置；记录固定 commit 的依赖清单。
+3. 区分候选实现：重建官方兼容对象特征/ID，或改造删除与数据准备函数直接消费外部集合。选择方案后逐步实测；不假定“把索引写成 target_id”即可工作。
+4. 若由外部集合渲染多视角 mask，明确目标投影、alpha 阈值、遮挡和修复区域推导；外部目标集合不等于 repair mask。
+5. 输出带模式、源哈希、后端 commit、转换参数和产物路径的适配清单；失败明确返回缺失项。B0 与修复分支必须校验实际删除集合一致，否则不能归因补全收益。
+6. 在小场景核验背景保护、集合/相机对齐和下游可运行，再允许阶段 4 接入。仅“文件能读取”不算适配完成。
+
+阶段 2 首轮使用 NativeBaseline 或官方兼容且人工核验的输入，不等待阶段 1 的 UI 或身份映射。ExternalSelection 在阶段 3–4 单独验收。
+
 ## 三、CapabilityDescriptor：能力探测
 
 **项目第一步不是写算法，是探测能力。**

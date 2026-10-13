@@ -31,8 +31,9 @@
 
 ### 2.1 定位与形态
 
-- 2023 年 11 月首版 → 逐步开源（编辑器起初即开源，**查看器后来也以 MIT 开源**）→ 现均在 `playcanvas/supersplat` 下，MIT 许可
-- 当前为 v2.x 系列
+- 2023 年 11 月首版 → 逐步开源（编辑器起初即开源，**查看器后来也以 MIT 开源**）→ 编辑器在 `playcanvas/supersplat`，查看器为独立项目，MIT 许可
+- 2026-10-13 核验官方 main：`package.json` 为 **3.5.2**，快照 commit `f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b`。实验固定此 commit 或另行记录的版本，不依据旧 2.x 实现设计扩展。
+- 3.x 使用 WebGPU 路线；新旧版本的存储、选择、排序和导出行为需分别核验。
 - **纯浏览器应用**，WebGPU 渲染，无原生后端
 
 ### 2.2 选择工具（8 种，核心资产）
@@ -45,11 +46,11 @@
 
 配套操作：Delete / Hide / Lock、Move / Rotate / Scale、**按选择集导出**。
 
-内部用 **8-bit state 位标记**（selected / deleted / locked）。
+旧资料描述 8-bit state 标记；3.x 的选择状态位置、CPU/GPU 同步和源索引对应需按固定 commit 验证，不作为已核实的扩展契约。
 
 ### 2.3 格式支持
 
-- **导入**：PLY、压缩 PLY（Draco）、SPLAT、SOG、LCC、**PLY 序列（4DGS 回放）**
+- **导入**：PLY、压缩 PLY（具体编码按固定版本核验，不称为 Draco）、SPLAT、SOG、LCC、**PLY 序列（4DGS 回放）**
 - **导出**：PLY、压缩 PLY、SPLAT、**独立 HTML viewer（zip 打包）**
 
 ### 2.4 自动化程度（关键限制）
@@ -75,15 +76,15 @@
 
 > **重要更正（验证后）**：早期版本直接写"用 SuperSplat 圈选后导出 Gaussian 索引，作为监督真值"。**在当前版本不能直接成立，已更正。**
 
-**问题所在：SuperSplat 导出会打乱索引。**
+**需验证的问题：加载、选择和导出可能改变 Gaussian 身份对应。** 旧版 Morton/Z-order、`reorder`/`skipReorder` 与格式过滤行为仅作历史线索，不能直接套用到 3.x。
 
-| 事实 | 说明 |
+| 固定 commit 的验证项 | 所需证据 |
 |---|---|
-| **1.0.0 起加载时做 Morton / Z-order 重排** | 为渲染做缓存友好的排序优化，大场景最多快约 4× |
-| **后果** | 编辑后导出的索引**与原文件 Gaussian 索引不再一一对应** |
-| **官方提供的开关** | 加载时传 `reorder: false`（新代码库中为 `skipReorder`）可保留原始顺序，代价是渲染性能下降 |
-| **陷阱** | **压缩 PLY 和 `.splat` 永远按 Morton 序写**，不受该开关影响 |
-| **导出过滤逻辑** | 按 deleted 状态、selection、opacity 阈值、NaN/Inf 有效性过滤后序列化 |
+| 加载是否重排 | 小型唯一 ID 样本，源顺序到内部 CPU/GPU 数据的对应；实际开关名和作用范围 |
+| 选择结果如何存储 | selected/deleted/protected 状态的存储、GPU 选择读回，以及源索引映射 |
+| 导出是否可追踪源身份 | 无编辑、选择过滤、删除、重排/压缩四类往返；检查导出过滤和 sidecar 映射 |
+
+未完成以上测试时只用于人工预览/复核，不用内部数组位置直接产生监督标签。
 
 **未压缩导出与关闭重排不足以保证身份对应**：删除/过滤会使数组位置重新编号。标注需绑定源资产哈希、版本，并在过滤前保存选择集与源索引或稳定 ID；导出资产另存映射。具体重排开关和格式行为来自外部资料，仍需按固定版本实测。
 
@@ -305,7 +306,7 @@ LichtFeld 的预编译二进制**只发 Windows**（且有付费门槛：注册 
 
 ### 不确定（不应作为决策依据）
 
-- **两个工具的具体版本号与功能引入版本**。检索到的资料指向的版本和发布时间无法核实，有来源互相矛盾，甚至有标注为未来日期的条目。
+- 功能引入版本与历史重排细节不能根据旧资料推断。SuperSplat 当前快照版本已核验，但行为及性能尚未实测；LichtFeld 仍需固定版本。
 - LichtFeld 编辑能力的实际效果**未实测**。"MCP 能驱动选择删除"是从其定位和文档描述推出的。
 
 ---
@@ -329,3 +330,5 @@ LichtFeld 的预编译二进制**只发 Windows**（且有付费门槛：注册 
 - [LichtFeld Studio 构建与发行文档](https://raw.githubusercontent.com/MrNeRF/LichtFeld-Studio/master/docs/building_and_distribution.md)
 - [LichtFeld Studio Releases（含 SAM 2.1 等模型资产）](https://github.com/MrNeRF/LichtFeld-Studio/releases)
 - [LichtFeld Studio v0.5.3 发布说明（radiancefields.com）](https://radiancefields.com/lichtfeld-studio-v0.5.3-drops-its-cuda-renderer-for-a-full-vulkan-viewer)
+
+本轮版本来源：[SuperSplat package.json 固定快照](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/package.json)（2026-10-13 核验）。
