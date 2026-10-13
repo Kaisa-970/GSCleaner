@@ -256,7 +256,7 @@ LichtFeld 的预编译二进制**只发 Windows**（且有付费门槛：注册 
 
 ## 六、推荐架构分工
 
-结合 [04-architecture.md](04-architecture.md) 的 Capability-Tiered Pipeline：
+结合 [04-architecture.md](04-architecture.md) 的 基于能力的数据协议：
 
 ```
 ┌─ 主控（Python，自研）──────────────────────────────┐
@@ -266,7 +266,7 @@ LichtFeld 的预编译二进制**只发 Windows**（且有付费门槛：注册 
        ├─ 独立算法后端 ──→ Inpaint360GS 官方基线 / 兼容训练器
        │
        ├─ 可选编辑与训练适配器 ──→ LichtFeld Studio
-       │     · COLMAP 数据集训练（Tier A）
+       │     · 兼容 COLMAP 数据集训练
        │     · 训练期 mask 监督（改善第 2 层）
        │     · 验证内置 SAM2.1 的点击分割与 mask 输出
        │     · Python 插件 / MCP 驱动选择与删除

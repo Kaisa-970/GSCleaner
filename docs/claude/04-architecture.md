@@ -1,6 +1,6 @@
 # 04 · 架构设计
 
-> 提案：Capability-Tiered Pipeline
+> 提案：基于能力与数据协议的 Pipeline
 >
 > 整理日期：2026-10-12 ｜ 状态：**提案，待评审，非已批准设计**
 >
@@ -27,7 +27,7 @@
 ```
 [Ingest]     能力探测 → CapabilityDescriptor
                  │
-[Planner]    能力 → OperationPlan（每步带 feasible / quality_grade）
+[Planner]    能力 → OperationPlan（每步带 feasible / supervision_source）
                  │   ↑ 集中处理所有降级逻辑，且必须显式报告降级原因
                  │
 [Execute]    L0 Ingest → L1 Analyze → L2 Remove → L3 Repair → L4 Relight → L5 Export
@@ -73,11 +73,11 @@
 
 **项目第一步不是写算法，是探测能力。**
 
-见 [00-requirements.md](00-requirements.md) 第四节约束 2：很多所谓"只有 PLY"其实不只有 PLY。这一步用于发现真实监督和渲染能力；找到相机文件本身不等于升级为 Tier A。
+见 [00-requirements.md](00-requirements.md) 第四节约束 2：很多所谓"只有 PLY"其实不只有 PLY。这一步用于发现真实监督和渲染能力；找到相机文件本身不等于获得真实影像监督。
 
-### 更正：能力探测应拆成独立字段，而非单一 Tier
+### 能力、可行性与验证结果
 
-早期版本写过"有 `cameras.json` 就够做渲染 → 直接升到接近满血模式（Tier B）"。**这个判断过强，已更正。**
+能力字段描述数据和组件条件；逐操作可行性描述是否能运行；质量验证结果描述是否达到冻结的验收标准。三者分开，不由布尔能力组合直接生成质量等级。
 
 有效 PLY 可以用虚拟相机渲染并在渲染图上跑 SAM；原始相机位姿和内参用于对齐真实影像。但这**与拥有原始影像不是一回事**：
 
@@ -91,7 +91,7 @@
 
 #### 拆分为独立能力字段
 
-因此探测输出**一组独立布尔字段**，Tier 只是它们的**汇总标签**，不是原始判据：
+探测输出一组独立字段；不维护额外输入标签或整体质量枚举：
 
 | 字段 | 含义 | 影响的下游操作 |
 |---|---|---|
@@ -108,7 +108,7 @@
 
 **准确表述**："无原图的有效 PLY（有或无原始相机）" 应描述为 **「可用虚拟相机渲染和弱分割，缺少真实影像监督」**。
 
-### 关键判据（修正版）
+### 关键判据
 
 > 原始位姿不是 `renderable` 的必要条件。有效 PLY 可用自设的虚拟相机渲染；原始标定用于对齐真实图像，而不是决定能否渲染。
 >
@@ -141,46 +141,36 @@
 
 ---
 
-## 四、OperationPlan：声明式操作计划
+## 四、操作可行性与质量验证
 
-`OperationPlan` 不只描述"做什么"，还要描述**"为什么只能这样做"**。
-
-**这是整套设计的关键。** 它让降级路径**被迫显式**——不会静默劣化；下游消费者可以按 grade 决定是否接受；加新能力（比如接入 COLMAP）只改探测和 planner。
-
-### 结构示例（Tier C，仅 PLY）
+首版用能力清单和 Python 模块执行。流程成熟后再引入 OperationPlan；它记录每步所需能力、后端适配状态与监督来源，不预言最终质量。
 
 ```json
 {
-  "capability": {"renderable": true, "source_supervised": false, "retrainable": true, "has_virtual_cameras": true},
+  "capability": {"renderable": true, "source_supervised": false},
   "ops": [
-    {"op": "render_virtual_views", "feasible": true, "quality": "full"},
-    {"op": "semantic_lift_2d", "feasible": true, "quality": "degraded", "reason": "rendered_images_only"},
-    {"op": "candidate_rank", "feasible": true, "quality": "degraded", "effect": "选择集合需人工确认"},
-    {"op": "hole_repair_gen", "feasible": true, "quality": "degraded", "reason": "pseudo_supervision_only"},
-    {"op": "source_reoptimize", "feasible": false, "quality": "unavailable", "reason": "no_registered_source_images"},
-    {"op": "export_ply", "feasible": true, "quality": "full"}
+    {"op": "render_virtual_views", "feasible": true, "supervision_source": "rendered"},
+    {"op": "source_reoptimize", "feasible": false, "reason": "no_registered_source_images"},
+    {"op": "external_selection_repair", "feasible": false, "reason": "adapter_not_validated"}
   ],
-  "overall_grade": "pseudo_supervised_experimental",
-  "warnings": ["可检查残留、保持度和多视角一致性；缺少干净参考，不能验证隐藏背景真实性"]
+  "validation": {
+    "protocol_id": null,
+    "execution": "not_run",
+    "background_preservation": "not_evaluated",
+    "hidden_background_accuracy": "not_measurable",
+    "reason": "no_registered_clean_reference"
+  }
 }
 ```
 
-以上为渲染器、兼容训练器均可用时的计划；缺失任一组件时应明确禁用对应操作，不根据 PLY-only 标签一律禁用。
-
-### 字段约定
-
 | 字段 | 含义 |
 |---|---|
-| `feasible` | 该操作在当前能力下是否可执行 |
-| `quality` | `full` / `degraded` / `unavailable` |
-| `reason` | 不可行或降级的原因（机器可读） |
-| `effect` | 降级对最终结果的实际影响（人可读） |
-| `overall_grade` | 整体质量等级，供下游决策 |
-| `warnings` | 必须向用户显示的限制 |
+| `feasible` | 输入、组件及所需后端适配是否满足执行条件；不代表质量通过 |
+| `supervision_source` | `original_background` / `rendered` / `generated` / `mixed`，来源细节保存在 RecoveryArtifact |
+| `reason` / `effect` | 不可执行条件或证据限制的机器/人可读描述 |
+| `validation` | 绑定产物和评测协议的逐项状态：未评测、不可测、通过或失败；只有冻结验收后才能判通过 |
 
-**`warnings` 不是日志，是交付物的一部分。** 对应 [00-requirements.md](00-requirements.md) 第六节"需求阶段必须向业务方说清的三件事"。
-
----
+同一能力组合可能产生质量不同的结果。配置、指标、阈值和失败案例必须随质量报告保存，不能用输入名称替代验证。
 
 ## 五、PLY-only 模式的识别：四类可用信号
 
@@ -323,7 +313,7 @@ Inpaint360GS 的 $\mathcal{L}_{space}$ 是**对象特征蒸馏阶段的空间正
 
 ## 七、分层执行设计
 
-| 层 | 职责 | Tier A 实现 | Tier C 实现 |
+| 层 | 职责 | 有配准原图与兼容后端 | 无原图、可渲染资产 |
 |---|---|---|---|
 | **L0 Ingest** | 能力探测 + 场景加载 + 预处理 | 同 | 同 |
 | **L1 Analyze** | 候选生成 + 排序 + NBS 判定 | 2D lifting + 语义 + 几何 | 几何 + 虚拟视角弱关联（若可渲染） |
@@ -371,24 +361,11 @@ Inpaint360GS 的 $\mathcal{L}_{space}$ 是**对象特征蒸馏阶段的空间正
 
 ---
 
-## 八、能力分级表
+## 八、交付承诺的唯一来源
 
-| Tier | 条件 | 识别 | 修复 | 评测 | 适用场景 |
-|---|---|---|---|---|---|
-| **A** | 图像 + COLMAP + 3DGS | 2D lifting + 语义 | 生成式 inpaint + 阴影清理 | holdout + paired GT | 旗舰交付 |
-| **B** | PLY + `cameras.json` | 2D lifting（无原图需自渲染） | 部分 inpaint | 弱（无 GT） | 常见的"伪 PLY"输入 |
-| **C** | 仅 PLY | 几何 + 虚拟视角弱关联 | 插值 / 实验性伪监督 | 保持度、残留、多视角一致性；无真实背景 GT | 不能证明隐藏背景真实还原 |
-| **C+** | 仅 PLY + 人工 ROI | 用位置先验收窄候选 | 同 C | 同 C | 人工确认选择与质量 |
+首版按输入能力提供的操作及限制集中维护于 [路线图阶段 4](05-roadmap.md#阶段-4--最小产品与分级交付)。本节不重复交付表；上文能力字段只用于探测条件，质量结果由实验验收产生。
 
-### 关于 C+ 的提议
-
-即使没有图像，如果用户能提供"干扰物大概在哪、有几个"（一次鼠标框选，或一句"工作台右边那个东西"），**目标选择问题会收窄；隐藏背景补全仍需实验验证**。
-
-> **建议把它设计成一等公民，而不是"自动失败后的降级选项"。**
->
-> 人工 ROI 有望降低选择成本和漏删率；收益需用实际场景测量，不预设成功率数字。
-
----
+人工 ROI/点击提示作为首版交互，不依赖自动发现干扰物。
 
 ## 九、工具链分工
 

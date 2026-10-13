@@ -143,7 +143,7 @@ python bin/predict_color.py --data_name 360_${scene}_virtual
 
 **结论**：论文把递归条件补全写进方法描述，但**官方代码将其作为实验性选项且默认关闭**。
 
-**对文档的修正**：[03-inpaint360gs.md](03-inpaint360gs.md) 机制 4 已标注为"可选实验分支"，[05-roadmap.md](05-roadmap.md) 阶段 2B 列入开/关对照实验。
+**对文档的修正**：[03-inpaint360gs.md](03-inpaint360gs.md) 机制 4 已标注为"可选实验分支"，[05-roadmap.md](05-roadmap.md) 阶段 2 列入开/关对照实验。
 
 ---
 

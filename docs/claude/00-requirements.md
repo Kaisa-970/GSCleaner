@@ -143,20 +143,7 @@ Inpaint360GS 的论文原话印证了这一点："most background areas remain v
 
 先检查是否存在原图、COLMAP 或相机文件、兼容训练配置和对象特征。找到相机文件不等于拥有原图；SH、scale、opacity 也不是训练期可见度统计。
 
-能力按独立字段记录，Tier 只是输入摘要：
-
-| 字段 | 含义 |
-|---|---|
-| `renderable` | Gaussian 参数有效且有兼容渲染器，可自设虚拟相机 |
-| `segmentable` | 原图或渲染图可用于分割 |
-| `source_supervised` | 有配准原图和标定，可进行真实监督 |
-| `retrainable` | 有兼容训练器和可用训练配置；真实/伪监督另行区分 |
-| `has_source_cameras` / `has_virtual_cameras` | 原始拍摄标定 / 已配置虚拟相机 |
-| `has_holdout` | 有未参与优化的校准评测视角与影像，用于新视角检查 |
-| `has_clean_reference` | 有配准干净背景参考，用于隐藏背景还原评测 |
-| `has_metric_scale` | 有真实尺度校准，用于碰撞与仿真 |
-| `relightable` | 有可用几何、材质和光照表示 |
-| `has_object_features` | 有可供移除流程使用的逐 Gaussian 对象特征 |
+能力用独立字段记录，不使用输入标签推断质量。字段定义集中于 [架构第三节](04-architecture.md#三capabilitydescriptor能力探测)。
 
 带干扰物的 holdout 不能当作干净背景参考。缺少原图也不妨碍设计合成实验：从有 GT 的完整资产中剥离原图与相机，以模拟 PLY-only 输入。
 
@@ -166,22 +153,11 @@ Inpaint360GS 的论文原话印证了这一点："most background areas remain v
 
 ---
 
-## 五、能力分级（供架构与路线图引用）
+## 五、能力与交付边界
 
-| Tier | 条件 | 识别 | 修复 | 评测 |
-|---|---|---|---|---|
-| **A** | 图像 + COLMAP + 3DGS | 2D lifting + 语义 | 生成式 inpaint + 阴影清理 | holdout + paired GT |
-| **B** | PLY + `cameras.json` | 2D lifting（无原图需自渲染） | 部分 inpaint | 弱（无 GT） |
-| **C** | 仅 PLY | 几何 + 虚拟视角弱关联 | 插值 / 实验性伪监督 | 残留、保持度与一致性，无真实背景 GT |
-| **C+** | 仅 PLY + 人工 ROI | 用位置先验收窄候选 | 同 C | 同 C |
+输入能力字段的唯一定义见 [架构第三节](04-architecture.md#三capabilitydescriptor能力探测)，首版交付承诺见 [路线图阶段 4](05-roadmap.md#阶段-4--最小产品与分级交付)。不再维护 A/B/C/C+ 输入标签表，避免把数据条件当作算法质量结论。
 
-**关于 C+ 的特别提议**：即使没有图像，如果用户能提供"干扰物大概在哪、有几个"（一次鼠标框选，或一句"工作台右边那个东西"），目标选择问题会收窄；隐藏背景补全仍需实验验证。
-
-> **建议把 C+ 设计成一等公民，而不是"自动失败后的降级选项"。**
->
-> 人工 ROI 有望降低选择成本和漏删率；收益需用实际场景测量，不预设成功率数字。
-
----
+人工 ROI 是首版操作方式：它收窄对象选择范围，但不自动保证隐藏背景修复成功。选择成本、误删和漏删用实验测量。
 
 ## 六、需求阶段必须向业务方说清的三件事
 

@@ -17,28 +17,12 @@
 | [03-inpaint360gs.md](03-inpaint360gs.md) | 代表作解剖：Inpaint360GS (WACV 2026) | 调研完成，**已源码校正** |
 | [04-architecture.md](04-architecture.md) | 架构设计：数据产物协议 + RemovalAdapter + 能力清单 | 提案，待评审 |
 | [05-roadmap.md](05-roadmap.md) | 实施路线：四阶段 + 后续扩展 | 提案，待评审 |
+| [CHANGELOG.md](CHANGELOG.md) | 文档修订历史 | 历史记录 |
 | [06-verification.md](06-verification.md) | **源码验证记录：论文与代码的落差** | 已验证 |
 
 ---
 
-## 修订说明（2026-10-12）
-
-本套文档经过一次**源码校正**。Inpaint360GS 官方代码已公开，经逐条对照，**早期版本有三处主要错误判断**，已修正；文档中的待验证项和假设仍以各章节标注为准：
-
-| # | 早期错误表述 | 更正后 |
-|---|---|---|
-| 1 | GS-IoU 是"开放集合下的无先验识别方案" | **GS-IoU 是关联器不是检测器**，依赖 HQSAM + 人工 `target_id` |
-| 2 | "有 `cameras.json` 就接近满血模式" | **拆成独立能力字段**；`renderable` ≠ `source_supervised` ≠ `has_holdout` ≠ `has_clean_reference` |
-| 3 | "低可见度 Gaussian 是残留碎片的主因，可扩散删除" | **低可见度 ≠ 干扰物**，只能作不确定性分数 |
-
-**另发现两处论文与代码不一致（本次新发现）**：
-
-- **论文式 2 的 GS-IoU 定义与代码不同**：论文是标准 IoU，代码实际执行 `IOU_heighlight`（覆盖率的非线性变换），且 `"IOU"` 分支是死代码，阈值也是 0.1 而非论文的 0.2
-- **KMeans 逻辑含 16×16 网格单元 + 30% 截断**，论文未描述
-
-详见 [06-verification.md](06-verification.md)。
-
----
+修订历史见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 当前实施主线
 
@@ -46,11 +30,11 @@
 
 GS-IoU 负责已有 mask 的关联，不负责判断哪些物体不该保留。PLY-only 基础编辑与完整数据基线并行；自动候选、无原图高质量修复、阴影和碰撞几何随后扩展。独立 Python 算法后端复用官方基线，LichtFeld 是可选适配器，SuperSplat 首先用于人工复核。
 
-本轮评审同步修订：虚拟相机渲染能力、holdout/干净参考区分、三类 mask、资产哈希与编辑映射、深度融合碰撞 mesh，以及四阶段实施路线。具体实验验收见 [05-roadmap.md](05-roadmap.md)。
+当前步骤、里程碑和唯一验收协议见 [05-roadmap.md](05-roadmap.md)。
 
 ---
 
-本轮接口修订（2026-10-13）：阶段 2 用 NativeBaseline 与编辑器解耦；ExternalSelection 单独验收。B0/B1 是删除对照与官方修复，B2/B3 是待开发增强。M4 按输入能力分级承诺，验收阈值先在开发场景校准，再冻结到独立样本。四类中间产物及适配契约见架构第二节。
+接口边界：阶段 2 用 NativeBaseline 与编辑器解耦；ExternalSelection 单独验收。B0/B1 是删除对照与官方修复，B2/B3 是待开发增强。M3 验收外部选择到修复闭环，M4 按输入能力分级承诺，验收阈值先在开发场景校准，再冻结到独立样本。四类中间产物及适配契约见架构第二节。
 
 ## 已确认的需求约束
 

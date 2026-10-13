@@ -470,8 +470,8 @@ python edit_object_inpaint.py ...                               # 3DGS 微调
 
 整条 pipeline 从 RGB 图像开始重建 GRF。
 
-- 对 **Tier C（仅 PLY）完全不适用**
-- 对 **Tier A / B 可用**
+- 仅 PLY 不满足官方原生流程的输入依赖；ExternalSelection 仍待适配验证。
+- 有官方兼容图像、标定、训练资产与对象特征时，可尝试 NativeBaseline；存在相机文件本身不保证可运行。
 
 > **它不是一个能"拿来处理客户给的 PLY"的组件，而是自建重建流程时才用得上的一环。**
 
